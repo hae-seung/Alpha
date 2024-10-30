@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1e4a653358803429a3918bc287deb1, type: 3}
   m_Name: Monster1
   m_EditorClassIdentifier: 
+  skills: []
   statusData: {fileID: 11400000, guid: 6030d76ada4c2884995be4c5b36f627d, type: 2}
-  battleMonsterPrefab: {fileID: 0}
+  battleMonsterPrefab: {fileID: 3139994062018646597, guid: 08e807946526cbf4dac0356ee4924d7c, type: 3}
   mosnterParty: []

@@ -4,25 +4,9 @@ using UnityEngine;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
-   /*
-  Character클래스로 관리
-     현재 보유한 스킬List<Skill>
-     현재 장착한 스킬List<Skill>
-
-  현재 보유한 파티원 List<Character>
-  Character에 들어갈 정보
-     현재 보유한 스킬List<Skill>
-     현재 장착한 스킬List<Skill>
-
-  */
-   
    public StatusData playerStatusData;
    
-   public Character player; //이걸 관리하면 데이터 변환 관리
-
-   public List<Character> partyList = new List<Character>();
-   public List<Character> competeParty= new List<Character>();
-   
+   [SerializeField]private Character player; //이걸 관리하면 데이터 변환 관리
    private MonsterData battleMonsterData;//배틀 진입하는 몬스터
    
    protected override void Awake()
@@ -47,6 +31,16 @@ public class PlayerManager : Singleton<PlayerManager>
    public void SetBattleMonsterData(MonsterData data)
    {
       battleMonsterData = data;
+   }
+
+   public Character GetPlayer()
+   {
+      return player;
+   }
+
+   public MonsterData GetMonsterData()
+   {
+      return battleMonsterData;
    }
    
 }

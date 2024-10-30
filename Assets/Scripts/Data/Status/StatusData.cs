@@ -6,7 +6,9 @@ using UnityEngine;
 public class StatusData : ScriptableObject
 {
     [SerializeField] private int maxHp;
+    [SerializeField] private int hp;
     [SerializeField] private int maxMana;
+    [SerializeField] private int mana;
     [SerializeField] private int str;
     [SerializeField] private int dex;
     [SerializeField] private int intelligence;
@@ -14,7 +16,9 @@ public class StatusData : ScriptableObject
     [SerializeField] private int defense;
     
     public int MaxHp => maxHp;
+    public int Hp => hp;
     public int MaxMana => maxMana;
+    public int Mana => mana;
     public int Str => str;
     public int Dex => dex;
     public int Intelligence => intelligence;

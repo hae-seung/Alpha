@@ -8,4 +8,9 @@ public class Skill
    public SkillData skillData { get; private set; }
 
    public Skill(SkillData data) => skillData = data;
+
+   public void UseSkill()
+   {
+      
+   }
 }
