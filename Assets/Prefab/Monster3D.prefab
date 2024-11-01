@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 100097026447843693}
   - component: {fileID: 2892297613676861728}
   - component: {fileID: 1943569662397504564}
-  - component: {fileID: 5724254737928278476}
+  - component: {fileID: 3623824616989362042}
   m_Layer: 0
   m_Name: Monster3D
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5724254737928278476
+--- !u!114 &3623824616989362042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,6 +93,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3139994062018646597}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f36706d0045b8c4785fc03332ca4cfc, type: 3}
+  m_Script: {fileID: 11500000, guid: 156ad4cdadcfe3043b28a7e81ee66fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

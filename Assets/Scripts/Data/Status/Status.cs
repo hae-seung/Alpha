@@ -21,9 +21,9 @@ public class Status
     public Status(StatusData data)//생성자
     {
         MaxHp = data.MaxHp;
-        Hp = data.Hp;
+        Hp = MaxHp;
         MaxMana = data.MaxMana;
-        Mana = data.Mana;
+        Mana = MaxMana;
         Str = data.Str;
         Dex = data.Dex;
         Intelligence = data.Intelligence;
@@ -45,4 +45,9 @@ public class Status
     }
     
     //todo: 스탯 변동사항들 정리하기
+
+    public void OnDamage()
+    {
+        
+    }
 }

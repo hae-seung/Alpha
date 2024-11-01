@@ -8,8 +8,9 @@ public class MonsterData : ScriptableObject
    public List<SkillData> skills;
    public StatusData statusData;
    //public List<item> items; //todo:소유 아이템 목록. 인벤토리로 될라나?
+   
    public GameObject battleMonsterPrefab;
    
    
-   public List<MonsterData> mosnterParty;
+   public List<MonsterData> monsterPartyData;
 }

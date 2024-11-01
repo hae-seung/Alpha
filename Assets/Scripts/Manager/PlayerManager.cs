@@ -5,14 +5,15 @@ using UnityEngine;
 public class PlayerManager : Singleton<PlayerManager>
 {
    public StatusData playerStatusData;
+   public GameObject battlePlayerPrefab;
    
-   [SerializeField]private Character player; //이걸 관리하면 데이터 변환 관리
+   private Character player; //이걸 관리하면 데이터 변환 관리
    private MonsterData battleMonsterData;//배틀 진입하는 몬스터
    
    protected override void Awake()
    {
       base.Awake();
-      player = new Character(playerStatusData);
+      player = new Character(playerStatusData, battlePlayerPrefab);
    }
    
    

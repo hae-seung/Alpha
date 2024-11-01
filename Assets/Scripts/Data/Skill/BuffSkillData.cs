@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BuffSkillData", menuName = "SO/BuffSkillData", order = int.MaxValue)]
-public class BuffSkill : SkillData
+public class BuffSkillData : SkillData
 {
     
 }
