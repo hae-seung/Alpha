@@ -17,8 +17,8 @@ public class BattleModerator : MonoBehaviour
         TP_Counter = 0;
     }
 
-    public void Initialize()
-    {
+    public void Initialize()                                                    // 함수 호출시 세팅된 시작 턴에 맞춰 순서를 정함.
+    {                                                                           // 이후 코루틴으로 턴 진행
         for (int i = 0; i < receivedData.StartTurn.Count; i++)
         {
             Skill newSkill = new Skill();
@@ -27,6 +27,16 @@ public class BattleModerator : MonoBehaviour
         }
 
         StartCoroutine(BattleTurnModerator());
+    }
+
+    private IEnumerator BattleTurnModerator()                                   // 0.4초마다 다음 턴에 해당하는 캐릭터에게 턴 부여
+    {
+        while (true)
+        {
+            GetTurn();
+
+            yield return new WaitForSeconds(0.4f);
+        }
     }
 
     public void SetTurn(Skill newSkill)
@@ -39,6 +49,7 @@ public class BattleModerator : MonoBehaviour
         {
             newSkill.TP = TP_Counter;
         }
+
         Debug.Log("예약된 TP 시간 : " + newSkill.TP);
         PQ.Enqueue(newSkill);
     }
@@ -79,16 +90,6 @@ public class BattleModerator : MonoBehaviour
             SetTurn(newSkill);
             //Debug.Log("적의 일반공격 예약 : " + TP_Counter);
             //Debug.Log("해당 공격의 STP : " + normalAttack.STP);
-        }
-    }
-
-    private IEnumerator BattleTurnModerator()
-    {
-        while(true)
-        {
-            GetTurn();
-
-            yield return new WaitForSeconds(0.4f);
         }
     }
 }

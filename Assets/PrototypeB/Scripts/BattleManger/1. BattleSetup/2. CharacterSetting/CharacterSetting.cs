@@ -20,8 +20,8 @@ public class CharacterSetting : MonoBehaviour
         PlaceEnemyObject(gameData);
     }
 
-    private void PlacePlayerObject(GameData gameData)
-    {
+    private void PlacePlayerObject(GameData gameData)                                                   // 플레이어 데이터 가져와서 오브젝트 생성
+    {                                                                                                   // GameData 파일의 player 변수에 데이터 저장
         GameObject playerPrefab = Resources.Load<GameObject>("Player");
 
         if (playerPrefab != null)
@@ -51,9 +51,9 @@ public class CharacterSetting : MonoBehaviour
         }
     }
 
-    private void PlaceEnemyObject(GameData gameData)
-    {
-        for (int i = 0; i < gameData.enemy_ID.Count; i++)
+    private void PlaceEnemyObject(GameData gameData)                                                    // 적 데이터 가져와서 오브젝트 생성
+    {                                                                                                   // GameData 파일의 enemies 변수에 데이터 저장
+        for (int i = 0; i < gameData.enemy_ID.Count; i++)                                               // 초기 스탯은 1~4 사이의 값을 넣어줌
         {
             GameObject enemyPrefab = Resources.Load<GameObject>(gameData.enemy_ID[i].ToString());
 

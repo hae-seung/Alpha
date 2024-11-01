@@ -12,7 +12,7 @@ public class CreateSceneEnvironment : MonoBehaviour
         gameObject.GetComponentInParent<BattleSetup>().Initialize(this);
     }
 
-    public void PlaceMapObject(GameData gameData)
+    public void PlaceMapObject(GameData gameData)                                               // 맵 데이터 리소스 파일에서 가져와서 오브젝트 생성
     {
         GameObject mapPrefab = Resources.Load<GameObject>(gameData.mapObject);
 

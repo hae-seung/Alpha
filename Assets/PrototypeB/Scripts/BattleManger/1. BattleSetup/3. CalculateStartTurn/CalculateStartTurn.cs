@@ -10,7 +10,7 @@ public class CalculateStartTurn : MonoBehaviour
         gameObject.GetComponentInParent<BattleSetup>().Initialize(this);
     }
 
-    public void CalStartTurn(GameData gameData)
+    public void CalStartTurn(GameData gameData)                                                     // 적&아군 모든 캐릭터의 DEX와 INT의 합으로 시작 턴 순서를 정함.
     {
         gameData.StartTurn.Add(gameData.player);
 
