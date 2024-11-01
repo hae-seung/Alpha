@@ -9,6 +9,8 @@ public class BattleUI : MonoBehaviour
    public Slider hpBar;
    public Button[] skillButtons;
 
+   private LivingEntity playerEntity;
+   
    private Action<Skill> onSkillSelected;
    private bool isOpenUI;
 
@@ -20,6 +22,7 @@ public class BattleUI : MonoBehaviour
    public void InitUI(LivingEntity playerEntity, Action<Skill> skillSelectCallback)//함수를 델리게이트인 Action으로 받음
    {
       // HP Bar 초기화
+      this.playerEntity = playerEntity;
       hpBar.maxValue = playerEntity.Status.MaxHp;
       hpBar.value = playerEntity.Status.Hp;
 
@@ -50,6 +53,10 @@ public class BattleUI : MonoBehaviour
       isOpenUI = !isOpenUI;
       gameObject.SetActive(isOpenUI);
    }
-   
+
+   public void UpdateSituation()
+   {
+      hpBar.value = playerEntity.Status.Hp;
+   }
    
 }

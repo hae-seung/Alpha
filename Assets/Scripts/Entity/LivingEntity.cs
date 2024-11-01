@@ -6,7 +6,7 @@ using UnityEngine;
 public class LivingEntity : MonoBehaviour
 {
     protected Status status;
-    protected List<Skill> skills;
+    protected List<Skill> skills = new List<Skill>();
     //protected List<item> items;
     
     public event Action OnDeath;//사망 이벤트
@@ -43,10 +43,40 @@ public class LivingEntity : MonoBehaviour
     }
     
     
-    public virtual void OnDamage()
+    public virtual void OnDamage(int damage)
     {
-       
+        int damageAmount = CalculateFinalSkillDamage(damage);
+        Hp -= damageAmount;
+        if (Hp <= 0)
+        {
+            OnDeath?.Invoke();
+        }
     }
 
+    public int CalculateFinalSkillDamage(int damage)
+    {
+        //todo: 스텟 방어력에 따른 입을데미지의 최종 계산 공식 적용
+        return damage;//임시
+    }
+
+    public int CalculateSkillDamage(int skillDamage)
+    {
+        //todo:스탯에 따른 스킬 데미지 계산 공식 적용
+        return skillDamage;//임시
+    }
+
+
+    public void ApplyBuffSkill(BuffType buffType, int buffAmount)
+    {
+        switch (buffType)
+        {
+            case BuffType.speed:
+                Dex += buffAmount;
+                break;
+            
+            default:
+                return;
+        }
+    }
     
 }

@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be3df881653ff854d856c3befb0aec15, type: 3}
-  m_Name: AttackSkillData
-  m_EditorClassIdentifier: 
-  id: 0
-  skillName: asdasd
-  rtp: 0
-  stp: 0
+  m_Script: {fileID: 0}
+  m_Name: HowlingEffectSO
+  m_EditorClassIdentifier: Assembly-CSharp::HowlingEffectSO
+  buffAmount: 1

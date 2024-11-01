@@ -52,4 +52,13 @@ public class PriorityQueue<T>
     {
         return data.Count == 0;
     }
+    
+    public T Peek()
+    {
+        if (data.Count == 0)
+            throw new InvalidOperationException("Queue is empty");
+
+        return data[0];
+    }
+
 }

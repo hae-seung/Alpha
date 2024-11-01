@@ -9,8 +9,8 @@ public class Skill
 
    public Skill(SkillData data) => skillData = data;
 
-   public void UseSkill()
+   public void UseSkill(LivingEntity caster, LivingEntity target)
    {
-      
+      skillData.UseSkill(caster, target);
    }
 }

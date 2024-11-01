@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BattleModerator : MonoBehaviour
@@ -10,6 +12,7 @@ public class BattleModerator : MonoBehaviour
     
     private PriorityQueue<SkillCast> skillQueue;
     private bool isSetUpFinished;
+    private bool isTurnProgress;
     private int battleTp;
 
     private bool isPlayerSkillSelected; // 스킬 선택 완료 여부
@@ -18,6 +21,31 @@ public class BattleModerator : MonoBehaviour
     {
         skillQueue = new PriorityQueue<SkillCast>(new SkillComparer());
         isSetUpFinished = false;
+        isTurnProgress = false;
+    }
+
+
+    private void Update()
+    {
+        if (!isSetUpFinished || isTurnProgress || skillQueue.IsEmpty())
+            return;
+
+        if (skillQueue.Peek().ExecuteTp > battleTp)
+            battleTp++;
+        else
+        {
+            isTurnProgress = true;
+            StartCoroutine(BattleStart());
+        }
+    }
+
+    private IEnumerator BattleStart()
+    {
+        Debug.Log("현재 TP" + battleTp);
+        Debug.Log(skillQueue.Peek().Skill.skillData.Name + "발동!");
+        skillQueue.Dequeue();
+        isTurnProgress = false;
+        yield return null;
     }
     
     public void RegisterEntity(PlayerEntity player, List<MonsterEntity> monsters)
@@ -43,7 +71,7 @@ public class BattleModerator : MonoBehaviour
             if (selectSkill == null)
                 yield return null;
 
-            SkillCast skillCast = new SkillCast(monsters[i], selectSkill, battleTp);
+            SkillCast skillCast = new SkillCast(monsters[i],player ,selectSkill, battleTp);
             skillQueue.Enqueue(skillCast);
         }
         yield return null;
@@ -60,7 +88,7 @@ public class BattleModerator : MonoBehaviour
 
     public void OnPlayerSkillSelected(Skill selectedSkill)
     {
-        SkillCast skillCast = new SkillCast(player, selectedSkill, battleTp);
+        SkillCast skillCast = new SkillCast(player,monsters[0],selectedSkill, battleTp);
         skillQueue.Enqueue(skillCast);
         
         battleUI.OpenUI();
