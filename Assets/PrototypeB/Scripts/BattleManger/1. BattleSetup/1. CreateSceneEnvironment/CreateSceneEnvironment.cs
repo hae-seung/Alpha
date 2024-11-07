@@ -18,7 +18,8 @@ public class CreateSceneEnvironment : MonoBehaviour
 
         if (mapPrefab != null)
         {
-            Instantiate(mapPrefab, Vector3.zero, Quaternion.identity);
+            //Instantiate(mapPrefab, Vector3.zero, Quaternion.identity);
+            Instantiate(mapPrefab, gameData.mapPosition.position, Quaternion.identity);
 
             if(isActiveLog)
             {

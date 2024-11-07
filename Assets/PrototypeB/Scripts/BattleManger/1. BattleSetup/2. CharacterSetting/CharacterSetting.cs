@@ -26,14 +26,17 @@ public class CharacterSetting : MonoBehaviour
 
         if (playerPrefab != null)
         {
-            Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+            //GameObject newPlayer =Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+            GameObject newPlayer =Instantiate(playerPrefab, gameData.playerStartPoint.position, Quaternion.identity);
 
             //½ºÅÈ Ãß°¡
             //gameData.player.stat = gameData.playerStat;
             //gameData.player.gameObject = playerPrefab;
 
-            gameData.player.ChangeStat(gameData.playerStat);
-            gameData.player.ChangeObject(playerPrefab);
+            gameData.player = newPlayer;
+
+            newPlayer.GetComponent<PlayerEntity>().phase1UI = gameData.phase1UI;
+            newPlayer.GetComponent<PlayerEntity>().skillContainer = gameData.ScrollView;
 
             if (isActiveLog)
             {
@@ -59,20 +62,22 @@ public class CharacterSetting : MonoBehaviour
 
             if (enemyPrefab != null)
             {
-                Instantiate(enemyPrefab, Vector3.zero, Quaternion.identity);
+                //GameObject newEnemy = Instantiate(enemyPrefab, Vector3.zero, Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemyPrefab, gameData.enemiesStartPoint[i].position, Quaternion.identity);
 
-                Character NewCharacter=new Character();
-                NewCharacter.character_ID = gameData.enemy_ID[i];
-               
+                //EnemyEntity NewCharacter=new EnemyEntity();
+                //NewCharacter.character_ID = gameData.enemy_ID[i];
+
                 //½ºÅÈ Ãß°¡ (·£´ý)
-                NewCharacter.stat.STR   = Random.Range(1, 4);
-                NewCharacter.stat.DEX   = Random.Range(1, 4);
-                NewCharacter.stat.INT   = Random.Range(1, 4);
-                NewCharacter.stat.LUCK  = Random.Range(1, 4);
 
-                NewCharacter.gameObject = enemyPrefab;
+                newEnemy.GetComponent<Entity>().stat.STR   = Random.Range(1, 4);
+                newEnemy.GetComponent<Entity>().stat.DEX   = Random.Range(1, 4);
+                newEnemy.GetComponent<Entity>().stat.INT   = Random.Range(1, 4);
+                newEnemy.GetComponent<Entity>().stat.LUCK  = Random.Range(1, 4);
                 
-                gameData.enemies.Add(NewCharacter);
+                //NewCharacter.gameObject = enemyPrefab;
+                
+                gameData.enemies.Add(newEnemy);
 
                 if (isActiveLog)
                 {

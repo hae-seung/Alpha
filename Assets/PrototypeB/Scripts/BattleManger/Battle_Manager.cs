@@ -11,7 +11,7 @@ public class Battle_Manager : MonoBehaviour
     void Start()
     {
         battleSetup.TriggerSettingSystem();
-        Invoke("StartBattleModerator", 3.0f);
+        Invoke("StartBattleModerator", 1.0f);
     }
 
     // Update is called once per frame

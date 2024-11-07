@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4442748687885929755}
   - component: {fileID: 5817284033277787407}
   - component: {fileID: 5347233705532084785}
+  - component: {fileID: 7618074713856921841}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -105,3 +106,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7618074713856921841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071695000919720410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3059a117c4b1140a5cdaf9ee626874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat:
+    STR: 2
+    INT: 2
+    DEX: 2
+    LUCK: 9
+  nextSkill: {fileID: 11400000, guid: 8ff17b2553d653b48bb68f096e538dcf, type: 2}
+  weapons:
+  - {fileID: 11400000, guid: 69b79bef597462241b438008daa730f1, type: 2}
+  nowWeapon: {fileID: 0}
+  skillContainer: {fileID: 0}
+  skillUIPrefab: {fileID: 497317102497761738, guid: 131a0b20cc9ad3d4a81d4d3a981db68d, type: 3}
+  endTurn: 0
+  phase1Flag: 1
+  phase2Flag: 1

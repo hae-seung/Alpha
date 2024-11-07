@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5303013000403147449}
   - component: {fileID: 7444075735960896599}
   - component: {fileID: 733290462205485860}
+  - component: {fileID: -3822976298442808025}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -105,3 +106,23 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3822976298442808025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3616667311764515402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf4e0bc09707c340821c7b6d789bd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat:
+    STR: 3
+    INT: 3
+    DEX: 3
+    LUCK: 1
+  nextSkill: {fileID: 11400000, guid: 8ff17b2553d653b48bb68f096e538dcf, type: 2}
+  weapons:
+  - {fileID: 11400000, guid: d76f7c1fcb81692459e59850f0907fac, type: 2}

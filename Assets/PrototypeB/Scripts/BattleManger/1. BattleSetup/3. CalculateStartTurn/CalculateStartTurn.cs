@@ -22,9 +22,11 @@ public class CalculateStartTurn : MonoBehaviour
         gameData.StartTurn.Sort(compareTurn);
     }
 
-    public int compareTurn(Character a, Character b)
+    public int compareTurn(GameObject a, GameObject b)
     {
-        return a.stat.GetDEX()+ a.stat.GetINT() > b.stat.GetDEX() + b.stat.GetINT() ? -1 : 1;
+        //Debug.Log(a.gameObject.name+"ÀÇ µ¦½º °ª : " + a.GetComponent<Entity>().stat.GetDEX());
+        //Debug.Log(b.gameObject.name + "ÀÇ µ¦½º °ª : " + b.GetComponent<Entity>().stat.GetDEX());
+        return (a.GetComponent<Entity>().stat.GetDEX()+ a.GetComponent<Entity>().stat.GetINT()) > (b.GetComponent<Entity>().stat.GetDEX() + b.GetComponent<Entity>().stat.GetINT()) ? -1 : 1;
     }
 }
 

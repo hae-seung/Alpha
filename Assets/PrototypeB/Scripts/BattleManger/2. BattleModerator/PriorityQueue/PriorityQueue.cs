@@ -13,19 +13,19 @@ public class PriorityQueue : MonoBehaviour
 public class PriorityQueue
 {
     //힙 자료 데이터를 담을 List 추가
-    List<Skill> Heap;
+    List<Entity> Heap;
 
 
     //힙 자료 생성
     public PriorityQueue()
     {
-        Heap = new List<Skill>();
+        Heap = new List<Entity>();
 
     }
 
 
     //Enqueue 기능 우선순위 큐에 데이터를 인자값으로 넣음
-    public void Enqueue(Skill data)
+    public void Enqueue(Entity data)
     {
         // list에 데이터 추가
         Heap.Add(data);
@@ -43,7 +43,7 @@ public class PriorityQueue
             int parant = (child - 1) / 2;
 
             //값 비교후 더 낮으면 스왑
-            if (Heap[child].TP < Heap[parant].TP)
+            if (Heap[child].TPCount < Heap[parant].TPCount)
             {
                 Swap(parant, child);
                 index = parant;
@@ -55,7 +55,7 @@ public class PriorityQueue
         }
     }
 
-    public Skill Dequeue()
+    public Entity Dequeue()
     {
         if (Heap.Count == 0)
         {
@@ -63,7 +63,7 @@ public class PriorityQueue
         }
 
         //리턴할 데이터 저장
-        Skill data = Heap[0];
+        Entity data = Heap[0];
 
         //마지막 데이터를 0에다 저장
         Heap[0] = Heap[Heap.Count() - 1];
@@ -87,14 +87,14 @@ public class PriorityQueue
             }
 
             // 오른쪽 child가 index값이랑 같거나 작고 왼쪽 child보다 작으면 오른쪽 child로 경로 변경
-            if (child + 1 <= index && Heap[child].TP > Heap[child + 1].TP)
+            if (child + 1 <= index && Heap[child].TPCount > Heap[child + 1].TPCount)
             {
                 child++;
             }
 
             // 현재 child에 저장된 값과 parant값을 비교후 더 작으면 스왑 후 변경된 값과 그 child들과 다시 비교하기 위해
             // parant를 child 값으로 변경
-            if (Heap[parant].TP > Heap[child].TP)
+            if (Heap[parant].TPCount > Heap[child].TPCount)
             {
                 Swap(parant, child);
                 parant = child;
@@ -110,7 +110,7 @@ public class PriorityQueue
         return data;
     }
 
-    public Skill Peek()
+    public Entity Peek()
     {
         if (Heap.Count == 0)
         {
@@ -118,7 +118,7 @@ public class PriorityQueue
         }
 
 
-        Skill peekData = Heap[0];
+        Entity peekData = Heap[0];
 
         return peekData;
     }
@@ -135,7 +135,7 @@ public class PriorityQueue
 
     public void Swap(int parant, int child)
     {
-        Skill temp = Heap[parant];
+        Entity temp = Heap[parant];
         Heap[parant] = Heap[child];
         Heap[child] = temp;
     }

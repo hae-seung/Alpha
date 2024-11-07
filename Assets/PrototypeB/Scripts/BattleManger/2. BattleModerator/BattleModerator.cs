@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class BattleModerator : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class BattleModerator : MonoBehaviour
 
     PriorityQueue PQ = new PriorityQueue();
 
-    int TP_Counter;
+    public int TP_Counter;
 
     void Start()
     {
@@ -21,9 +22,7 @@ public class BattleModerator : MonoBehaviour
     {                                                                           // 이후 코루틴으로 턴 진행
         for (int i = 0; i < receivedData.StartTurn.Count; i++)
         {
-            Skill newSkill = new Skill();
-            newSkill.owner = receivedData.StartTurn[i];
-            SetTurn(newSkill);
+            SetTurn(receivedData.StartTurn[i].GetComponent<Entity>());
         }
 
         StartCoroutine(BattleTurnModerator());
@@ -33,70 +32,50 @@ public class BattleModerator : MonoBehaviour
     {
         while (true)
         {
-            GetTurn();
-
-            yield return new WaitForSeconds(0.4f);
+            yield return StartCoroutine(GetTurn());
         }
     }
 
-    public void SetTurn(Skill newSkill)
+    public void SetTurn(Entity entity)
     {
-        if(newSkill.skill!=null)
+        PQ.Enqueue(entity);
+    }
+
+    public IEnumerator GetTurn()                                                       //스킬 시전 후 다음 스킬 예약
+    {
+        Entity activedEntity= PQ.Dequeue();
+        TP_Counter = activedEntity.TPCount;
+
+        if (activedEntity.nextSkill != null)
         {
-            newSkill.TP = TP_Counter + newSkill.skill.STP;
+            yield return StartCoroutine(ActiveSkillAndSetNext(activedEntity));
         }
         else
         {
-            newSkill.TP = TP_Counter;
+            //StartCoroutine(SetSkill(activedEntity));
         }
 
-        Debug.Log("예약된 TP 시간 : " + newSkill.TP);
-        PQ.Enqueue(newSkill);
+        activedEntity.TPCount= activedEntity.nextSkill.TP + TP_Counter;
+        Debug.Log("현재 공격의 TP : " + TP_Counter);
+        Debug.Log("다음 공격의 TP는 : " + activedEntity.TPCount);
+        
+        PQ.Enqueue(activedEntity);                                              // 위의 코루틴 종료시 우선순위 큐에 다음 행동 삽입
+        Debug.Log("프라이어티 큐의 peek 값 : " + PQ.Peek().TPCount);
     }
 
-    public void GetTurn()                                                       //스킬 시전 후 다음 스킬 예약
+    public IEnumerator ActiveSkillAndSetNext(Entity entity)
     {
-        Skill nowSkill= PQ.Dequeue();
-        TP_Counter = nowSkill.TP;
-        Debug.Log("현재 TP 시간 : "+TP_Counter);
+        yield return StartCoroutine(entity.ActiveSkill());
 
-        // 스킬 시전 추가 필요
-
-        if (nowSkill.owner== receivedData.player)                               //고른 스킬 우선 순위 큐에 추가
-        {
-            Debug.Log("플레이어 턴 시작 : " + TP_Counter);
-
-            CharacterSkill fireball = new CharacterSkill();
-            fireball.STP = 12;
-
-            Skill newSkill = new Skill();
-            newSkill.owner = receivedData.player;
-            newSkill.skill = fireball;
-
-            SetTurn(newSkill);
-            //Debug.Log("플레이어의 파이어볼 예약 : " + TP_Counter);
-        }
-        else
-        {
-            Debug.Log("적 턴 시작 : " + TP_Counter);
-
-            CharacterSkill normalAttack = new CharacterSkill();
-            normalAttack.STP = Random.Range(5,15);
-
-            Skill newSkill = new Skill();
-            newSkill.owner = nowSkill.owner;
-            newSkill.skill = normalAttack;
-
-            SetTurn(newSkill);
-            //Debug.Log("적의 일반공격 예약 : " + TP_Counter);
-            //Debug.Log("해당 공격의 STP : " + normalAttack.STP);
-        }
+        yield return StartCoroutine(entity.GetTurn());
     }
-}
 
-public class Skill
-{
-    public Character owner;
-    public CharacterSkill skill=null;
-    public int TP = 0;
+    /*
+    public IEnumerator SetSkill(Entity entity)
+    {
+        yield return StartCoroutine(entity.GetTurn());
+
+        SetTurn(entity);
+    }
+    */
 }
