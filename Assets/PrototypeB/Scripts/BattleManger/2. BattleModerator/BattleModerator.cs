@@ -56,11 +56,11 @@ public class BattleModerator : MonoBehaviour
         }
 
         activedEntity.TPCount= activedEntity.nextSkill.TP + TP_Counter;
-        Debug.Log("현재 공격의 TP : " + TP_Counter);
-        Debug.Log("다음 공격의 TP는 : " + activedEntity.TPCount);
+        Debug.Log("현재 TP : " + TP_Counter);
+        //Debug.Log("다음 공격의 TP는 : " + activedEntity.TPCount);
         
         PQ.Enqueue(activedEntity);                                              // 위의 코루틴 종료시 우선순위 큐에 다음 행동 삽입
-        Debug.Log("프라이어티 큐의 peek 값 : " + PQ.Peek().TPCount);
+        //Debug.Log("프라이어티 큐의 peek 값 : " + PQ.Peek().TPCount);
     }
 
     public IEnumerator ActiveSkillAndSetNext(Entity entity)
@@ -69,13 +69,4 @@ public class BattleModerator : MonoBehaviour
 
         yield return StartCoroutine(entity.GetTurn());
     }
-
-    /*
-    public IEnumerator SetSkill(Entity entity)
-    {
-        yield return StartCoroutine(entity.GetTurn());
-
-        SetTurn(entity);
-    }
-    */
 }

@@ -124,11 +124,12 @@ MonoBehaviour:
     DEX: 2
     LUCK: 9
   nextSkill: {fileID: 11400000, guid: 8ff17b2553d653b48bb68f096e538dcf, type: 2}
+  TPCount: 0
   weapons:
   - {fileID: 11400000, guid: 69b79bef597462241b438008daa730f1, type: 2}
+  - {fileID: 11400000, guid: de9804d07cb111945a8fe9db40b3c7e6, type: 2}
   nowWeapon: {fileID: 0}
+  phase1UI: {fileID: 0}
   skillContainer: {fileID: 0}
   skillUIPrefab: {fileID: 497317102497761738, guid: 131a0b20cc9ad3d4a81d4d3a981db68d, type: 3}
   endTurn: 0
-  phase1Flag: 1
-  phase2Flag: 1

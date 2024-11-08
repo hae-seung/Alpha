@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerEntity : Entity
 {
@@ -89,6 +90,7 @@ public class PlayerEntity : Entity
     public void SwapWeapon()
     {
         currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
+        nowWeapon = weapons[currentWeaponIndex];
         UpdateSkillUI();
     }
 
@@ -103,7 +105,7 @@ public class PlayerEntity : Entity
         foreach (Skill skill in nowWeapon.skills)
         {
             GameObject skillUI = Instantiate(skillUIPrefab, skillContainer.transform);
-            //skillUI.GetComponentInChildren<Text>().text = skill.skillName;
+            skillUI.GetComponentInChildren<TextMeshProUGUI>().text = skill.skillName;
             skillUI.GetComponentInChildren<Image>().sprite = skill.icon;
             // 추가 설정이 필요하면 여기서 설정
 

@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: 
   icon: {fileID: 0}
-  skills: []
+  skills:
+  - {fileID: 11400000, guid: 4c54f63f1825a8c4c8ef4a5c86a40b65, type: 2}
+  - {fileID: 11400000, guid: 0379d38abd593874791028845b460f8e, type: 2}

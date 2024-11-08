@@ -17,7 +17,7 @@ public class EnemyEntity : Entity
     {
         SelectNextSkill();
         yield return new WaitForSeconds(0.2f);
-        Debug.Log("적 스킬 선택 완료.");
+        //Debug.Log("적 스킬 선택 완료.");
     }
 
     private IEnumerator OperateSkill()

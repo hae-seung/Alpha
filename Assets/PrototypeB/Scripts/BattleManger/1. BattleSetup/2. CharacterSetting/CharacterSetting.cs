@@ -26,12 +26,7 @@ public class CharacterSetting : MonoBehaviour
 
         if (playerPrefab != null)
         {
-            //GameObject newPlayer =Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
             GameObject newPlayer =Instantiate(playerPrefab, gameData.playerStartPoint.position, Quaternion.identity);
-
-            //½ºÅÈ Ãß°¡
-            //gameData.player.stat = gameData.playerStat;
-            //gameData.player.gameObject = playerPrefab;
 
             gameData.player = newPlayer;
 
@@ -62,14 +57,9 @@ public class CharacterSetting : MonoBehaviour
 
             if (enemyPrefab != null)
             {
-                //GameObject newEnemy = Instantiate(enemyPrefab, Vector3.zero, Quaternion.identity);
                 GameObject newEnemy = Instantiate(enemyPrefab, gameData.enemiesStartPoint[i].position, Quaternion.identity);
-
-                //EnemyEntity NewCharacter=new EnemyEntity();
-                //NewCharacter.character_ID = gameData.enemy_ID[i];
-
+                
                 //½ºÅÈ Ãß°¡ (·£´ý)
-
                 newEnemy.GetComponent<Entity>().stat.STR   = Random.Range(1, 4);
                 newEnemy.GetComponent<Entity>().stat.DEX   = Random.Range(1, 4);
                 newEnemy.GetComponent<Entity>().stat.INT   = Random.Range(1, 4);

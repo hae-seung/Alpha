@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9b6c88a68bf3348acf438a261eab35, type: 3}
   m_Name: Jap
   m_EditorClassIdentifier: 
-  skillName: 
+  skillName: Jap
   icon: {fileID: 0}
   description: 
   effectPrefab: {fileID: 0}
