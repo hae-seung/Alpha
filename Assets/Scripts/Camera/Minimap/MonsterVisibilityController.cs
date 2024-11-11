@@ -7,6 +7,7 @@ public class MonsterVisibilityController : MonoBehaviour
     [SerializeField] private Light2D flashlight;  // 손전등 역할을 하는 Light2D 컴포넌트
     [SerializeField] private Transform playerTransform;  // 플레이어의 Transform
     [SerializeField] private LayerMask monsterLayer;  // 몬스터가 있는 레이어
+    
     private float lightRadius;  // 손전등의 최대 거리
     private float lightAngleCosine; // 빛의 각도에 대한 코사인 값
     private float lightHalfAngle = 45f; // 반각 (총 90도 범위)
@@ -19,7 +20,6 @@ public class MonsterVisibilityController : MonoBehaviour
 
     private void Update()
     {
-        // 손전등의 현재 방향을 up 방향으로 설정
         Vector2 flashlightDirection = flashlight.transform.up;
         Collider2D[] hits = Physics2D.OverlapCircleAll(playerTransform.position, lightRadius, monsterLayer);
 
@@ -32,11 +32,12 @@ public class MonsterVisibilityController : MonoBehaviour
             float dotProduct = Vector2.Dot(flashlightDirection, directionToMonster);
 
             bool isWithinLightCone = dotProduct >= lightAngleCosine;
-            sr.UnableRender(isWithinLightCone);
+            sr.RenderSprite(isWithinLightCone);
         }
     }
 
-    // // Gizmo를 그려주는 함수
+    #region 기즈모
+
     // private void OnDrawGizmos()
     // {
     //     if (!flashlight) return;
@@ -68,4 +69,7 @@ public class MonsterVisibilityController : MonoBehaviour
     //         previousPoint = nextPoint;
     //     }
     // }
+
+    #endregion
+    
 }

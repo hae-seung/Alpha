@@ -8,7 +8,10 @@ public class PlayerManager : Singleton<PlayerManager>
    public GameObject battlePlayerPrefab;
    
    private Character player; //이걸 관리하면 데이터 변환 관리
-   private MonsterData battleMonsterData;//배틀 진입하는 몬스터
+   private List<MonsterData> battlelMonsterDatas = new List<MonsterData>();//배틀 진입하는 몬스터
+   
+   public Character Player => player;
+   
    
    protected override void Awake()
    {
@@ -31,17 +34,19 @@ public class PlayerManager : Singleton<PlayerManager>
 
    public void SetBattleMonsterData(MonsterData data)
    {
-      battleMonsterData = data;
+      battlelMonsterDatas.Add(data);
    }
 
-   public Character GetPlayer()
+  
+   public List<MonsterData> GetMonsterDatas()
    {
-      return player;
+      int count = Mathf.Min(battlelMonsterDatas.Count, 3);
+      return battlelMonsterDatas.GetRange(0, count); // 0부터 count개만큼 반환
    }
 
-   public MonsterData GetMonsterData()
-   {
-      return battleMonsterData;
-   }
    
+   public bool isEmptyMonsterData()
+   {
+      return battlelMonsterDatas.Count == 0 ? true : false;
+   }
 }

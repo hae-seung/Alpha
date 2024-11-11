@@ -6,7 +6,7 @@ using UnityEngine;
 public class BattleSetup : MonoBehaviour
 {
     private Character playerData;
-    private MonsterData battleMonsterData;
+    private List<MonsterData> battleMonsterDatas;
     private BattleModerator battleModerator;
     [SerializeField] private BattleUI battleUI;
     
@@ -47,8 +47,8 @@ public class BattleSetup : MonoBehaviour
 
     private IEnumerator GetDataFromPostScene()
     {
-        playerData = PlayerManager.Instance.GetPlayer();
-        battleMonsterData = PlayerManager.Instance.GetMonsterData();
+        playerData = PlayerManager.Instance.Player;
+        battleMonsterDatas = PlayerManager.Instance.GetMonsterDatas();
         yield return null;
     }
 
@@ -67,18 +67,14 @@ public class BattleSetup : MonoBehaviour
         playerEntity.SetUpPlayer(playerData);
         
         
-        // 생성할 몬스터 데이터 리스트 준비 (자신과 파티 몬스터들 포함)
-        List<MonsterData> allMonsters = new List<MonsterData> { battleMonsterData };
-        allMonsters.AddRange(battleMonsterData.monsterPartyData);
-
-        for (int i = 0; i < allMonsters.Count && i < monsterSpawnPoint.Length; i++)
+        for (int i = 0; i < battleMonsterDatas.Count && i < monsterSpawnPoint.Length; i++)
         {
-            GameObject monster = Instantiate(allMonsters[i].battleMonsterPrefab, 
+            GameObject monster = Instantiate( battleMonsterDatas[i].battleMonsterPrefab, 
                 monsterSpawnPoint[i].position, 
                 Quaternion.identity);
     
             MonsterEntity monsterEntity = monster.GetComponent<MonsterEntity>();
-            monsterEntity.SetUpMonster(allMonsters[i]);
+            monsterEntity.SetUpMonster( battleMonsterDatas[i]);
             monsterEntities.Add(monsterEntity);
         }
         
