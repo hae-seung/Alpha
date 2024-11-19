@@ -12,6 +12,7 @@ public class FieldManager : MonoBehaviour
     [SerializeField] private Monster2D monster;
     
     private List<Monster2D> monsters = new List<Monster2D>();
+    private Dictionary<Monster2D, float> monsterDistancesBeforeMove = new Dictionary<Monster2D, float>();
     private int completedMonsterMoves = 0;
     
     private void Awake()
@@ -28,14 +29,26 @@ public class FieldManager : MonoBehaviour
 
     private IEnumerator FieldMoveTurn()
     {
-        int count = 0;
         while (true)
         {
-            count++;
-            Debug.Log("새턴시작 : " + count);
+            //플레이어가 움직이기 전 몬스터와의 거리 저장
+            SaveMonsterDistances();
             
             yield return StartCoroutine(MovePlayerTurn());
             yield return StartCoroutine(MoveMonsterTurn());
+        }
+    }
+
+    private void SaveMonsterDistances()
+    {
+        monsterDistancesBeforeMove.Clear();
+        foreach (var monster in monsters)
+        {
+            if (monster.IsFindTarget && monster.IsLighted)
+            {
+                float distance = CalculateDistanceToPlayer(monster);
+                monsterDistancesBeforeMove[monster] = distance;
+            }
         }
     }
 
@@ -45,51 +58,48 @@ public class FieldManager : MonoBehaviour
         yield return new WaitUntil(() => playerMovement.HasMoved);
         playerMovement.HasMoved = false;
     }
-    
+
+   
     private IEnumerator MoveMonsterTurn()
     {
-        Debug.Log("몬스터 턴 시작");
+        UpdateBattleMonsterList();
+        
         completedMonsterMoves = 0; // 초기화
         
-        // 1. 전투 리스트 업데이트
-        UpdateBattleMonsterList();
-
-        // 2. 몬스터 이동
+        // 몬스터 이동
         MoveMonsters();
 
-        // 3. 모든 몬스터 이동 완료 대기
+        // 모든 몬스터 이동 완료 대기
         yield return new WaitUntil(() => completedMonsterMoves == monsters.Count);
         Debug.Log("모든 몬스터가 이동을 완료했습니다.");
     }
-
+    
     private void UpdateBattleMonsterList()
     {
-        for (int i = 0; i < monsters.Count; i++)
+        Debug.Log("MonsterList 업데이트 호출");
+        foreach (var monster in monsters)
         {
-            if (monsters[i].IsFindTarget && monsters[i].IsLighted)
+            if (monsterDistancesBeforeMove.ContainsKey(monster) && monster.IsFindTarget && monster.IsLighted)
             {
-                float preDistance = monsters[i].monsterMovement.DistanceToPlayer;
-                monsters[i].monsterMovement.CalculateDistanceToPlayer();
-                float curDistance = monsters[i].monsterMovement.DistanceToPlayer;
+                float preDistance = monsterDistancesBeforeMove[monster];
+                float curDistance = CalculateDistanceToPlayer(monster);
 
-                if (curDistance < preDistance)
+                if (curDistance < preDistance) // 거리가 가까워진 경우
                 {
-                    Debug.Log("리스트에" + i + "번째 몬스터 추가!");
-                    PlayerManager.Instance.SetBattleMonsterData(monsters[i].GetMonsterData);
+                    Debug.Log($"리스트에 {monster.name} 추가!");
+                    PlayerManager.Instance.SetBattleMonsterData(monster.GetMonsterData);
                 }
             }
         }
         CheckPlayerManagerMonsterList();
     }
-
     private void MoveMonsters()
     {
-        for (int i = 0; i < monsters.Count; i++)
+        foreach (var monster in monsters)
         {
-            Debug.Log("무브를 호출합니다");
-            monsters[i].monsterMovement.Move(() => completedMonsterMoves++);
+            Debug.Log("몬스터 이동 호출");
+            monster.monsterMovement.Move(() => completedMonsterMoves++);
         }
-        CheckPlayerManagerMonsterList();
     }
 
     private void CheckPlayerManagerMonsterList()
@@ -98,6 +108,11 @@ public class FieldManager : MonoBehaviour
         {
             GameManager.Instance.EnterBattleScene();
         }
+    }
+
+    private float CalculateDistanceToPlayer(Monster2D monster)
+    {
+        return Vector2.Distance(monster.transform.position, playerMovement.transform.position);
     }
 
     public void AddNewMonster(Monster2D monster)

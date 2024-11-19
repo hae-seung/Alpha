@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,12 +12,18 @@ public class PlayerManager : Singleton<PlayerManager>
    private List<MonsterData> battlelMonsterDatas = new List<MonsterData>();//배틀 진입하는 몬스터
    
    public Character Player => player;
-   
-   
+   public event Action<Character> OnPlayerInitialized;
+
+
    protected override void Awake()
    {
       base.Awake();
       player = new Character(playerStatusData, battlePlayerPrefab);
+   }
+   
+   private void Start()
+   {
+      OnPlayerInitialized?.Invoke(player);
    }
    
    

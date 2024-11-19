@@ -14,7 +14,6 @@ public class MonsterEntity : LivingEntity
    {
       status = new Status(data.statusData);//복사 생성자가 아닌 일반 생성자로 초기화
       base.SetStauts();
-      Debug.Log(data.skills.Count);
       for (int i = 0; i < data.skills.Count; i++)
       {
          Skill skill = new Skill(data.skills[i]);
