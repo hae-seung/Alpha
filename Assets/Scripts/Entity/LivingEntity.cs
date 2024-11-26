@@ -8,46 +8,24 @@ public class LivingEntity : MonoBehaviour
     protected Status status;
     protected List<Skill> skills = new List<Skill>();
     //protected List<item> items;
-    
     public event Action OnDeath;//사망 이벤트
 
     public Status Status => status;
     public List<Skill> Skills => skills;
     
-    #region 전투스텟 데이터
-
-    public int MaxHp { get; protected set; }
-    public int Hp { get;  protected set; }
-    public int MaxMana { get; protected set; }
-    public int Mana { get; protected set; }
-    public int Str { get; protected set; }
-    public int Dex { get;  protected set; }
-    public int Intelligence { get; protected set; }
-    public int ThoughtPower { get; protected set; }
-    public int Defense { get;  protected set; }
-
-    #endregion
     
     
     protected void SetStauts()
     {
-        MaxHp = status.MaxHp;
-        Hp = status.Hp;
-        MaxMana = status.MaxMana;
-        Mana = status.Mana;
-        Str = status.Str;
-        Dex = status.Dex;
-        Intelligence = status.Intelligence;
-        ThoughtPower = status.ThoughtPower;
-        Defense = status.Defense;
+        status = new Status(status);
     }
     
     
     public virtual void OnDamage(int damage)
     {
         int damageAmount = CalculateFinalSkillDamage(damage);
-        Hp -= damageAmount;
-        if (Hp <= 0)
+        status.ModifyStat(StatType.Hp, damage);
+        if (status.GetStat(StatType.Hp) <= 0)
         {
             OnDeath?.Invoke();
         }
@@ -68,15 +46,21 @@ public class LivingEntity : MonoBehaviour
 
     public void ApplyBuffSkill(BuffType buffType, int buffAmount)
     {
+        StatType targetStat;
         switch (buffType)
         {
             case BuffType.speed:
-                Dex += buffAmount;
+                targetStat = StatType.Dex;
                 break;
-            
             default:
+                Debug.LogWarning($"Buff type {buffType} is not supported.");
                 return;
         }
+        ModifyStat(targetStat, buffAmount);
     }
-    
+
+    private void ModifyStat(StatType targetStat, int buffAmount)
+    {
+        status.ModifyStat(targetStat, buffAmount);
+    }
 }

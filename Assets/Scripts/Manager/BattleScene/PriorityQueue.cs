@@ -11,7 +11,7 @@ public class SkillComparer : IComparer<SkillCast>
         if (tpComparison != 0)
             return tpComparison;
 
-        return y.Caster.Status.Dex.CompareTo(x.Caster.Status.Dex);
+        return y.Caster.Status.GetStat(StatType.Dex).CompareTo(x.Caster.Status.GetStat(StatType.Dex));
         
     }
 }

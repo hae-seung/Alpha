@@ -6,15 +6,13 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     private List<Item> items;
-
+    
+    
     private void Awake()
     {
         PlayerManager.Instance.OnPlayerInitialized += InitInventory;
     }
-    private void OnDestroy()
-    {
-        PlayerManager.Instance.OnPlayerInitialized -= InitInventory;
-    }
+   
 
     private void InitInventory(Character player)
     {
@@ -31,7 +29,6 @@ public class PlayerInventory : MonoBehaviour
     {
         PlayerManager.Instance.Player.inventory.SetInventory(items);
     }
-    
     
     
     

@@ -1,12 +1,21 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField] private OptionUI optionUI;
     public Vector2 MoveDirection { get; private set; }
     private bool isMovable = false;
+    
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            Time.timeScale = 0;
+            optionUI.ActiveInventoryUI();
+        }
+        
         if (isMovable)
         {
             float horizontal = Input.GetAxisRaw("Horizontal");

@@ -23,8 +23,8 @@ public class BattleUI : MonoBehaviour
    {
       // HP Bar 초기화
       this.playerEntity = playerEntity;
-      hpBar.maxValue = playerEntity.Status.MaxHp;
-      hpBar.value = playerEntity.Status.Hp;
+      hpBar.maxValue = playerEntity.Status.GetStat(StatType.MaxHp);
+      hpBar.value = playerEntity.Status.GetStat(StatType.Hp);
 
       // 스킬 버튼 초기화 및 콜백 설정
       onSkillSelected = skillSelectCallback;
@@ -56,7 +56,7 @@ public class BattleUI : MonoBehaviour
 
    public void UpdateSituation()
    {
-      hpBar.value = playerEntity.Status.Hp;
+      hpBar.value = playerEntity.Status.GetStat(StatType.Hp);
    }
    
 }
