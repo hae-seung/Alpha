@@ -12,7 +12,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            Time.timeScale = 0;
+            isMovable = false;
             optionUI.ActiveInventoryUI();
         }
         

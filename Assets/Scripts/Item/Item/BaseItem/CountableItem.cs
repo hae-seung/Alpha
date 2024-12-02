@@ -32,4 +32,11 @@ public abstract class CountableItem : Item
 
         return (nextAmount > MaxAmount) ? (nextAmount - MaxAmount) : 0;
     }
+    
+    public CountableItem Clone(int amount)
+    {
+        return CloneItem(amount);
+    }
+    
+    protected abstract CountableItem CloneItem(int amount);
 }

@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
 public class Inventory
 {
-    private List<Item> items = new List<Item>();
+    private Dictionary<int, List<Item>> items;
     
+    public IReadOnlyDictionary<int, List<Item>> Item => items;
     
-    public IReadOnlyList<Item> Items => items.AsReadOnly();
-    public void SetInventory(List<Item> _items)
+    public void SetInventory(Dictionary<int, List<Item>> _items)
     {
         items.Clear();
-        items = new List<Item>(_items);
+        items = new Dictionary<int, List<Item>>(_items);
     }
 }
