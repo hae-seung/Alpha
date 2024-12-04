@@ -15,11 +15,11 @@ public class PortionListManager : MonoBehaviour
       {
          case StatType.Hp:
             //HP 관리자에게 넘겨줌
-            Debug.Log("으앙");
+            hpList.CreateNewItem(newItem, idx, stackIdx);
             break;
          case StatType.Mana:
             //MP 관리자에게 넘겨줌
-            Debug.Log("호옹");
+            mpList.CreateNewItem(newItem, idx, stackIdx);
             break;
          default:
             break;

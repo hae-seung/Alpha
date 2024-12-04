@@ -14,7 +14,9 @@ public class InventoryUI : MonoBehaviour
     public WeaponWindow weponManger;
     public BagWindow bagManager;
 
-
+    [Header("모든 아이템 슬롯")]
+    private List<Slot> allItemSlots = new List<Slot>();
+    
     public void CreateNewItem(Item newItem, int idx, int stackIdx)
     {
         CountableItem citem = newItem as CountableItem;
@@ -24,6 +26,11 @@ public class InventoryUI : MonoBehaviour
         {
             
         }
+    }
+
+    public void AddSlot(Slot newSlot)
+    {
+        allItemSlots.Add(newSlot);
     }
     
     public void ActiveWindow(int index)

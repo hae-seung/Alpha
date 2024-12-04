@@ -25,6 +25,7 @@ public class PlayerInventory : MonoBehaviour
         else
         {
             items = new Dictionary<int, List<Item>>(player.inventory.Item);
+            //todo: 씬 전환 대비 모든 아이템들에 대해 UI 초기화 작업 필요 모든 아이템들에 대해 AddItem 해주면 될듯?
         }
     }
 
