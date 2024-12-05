@@ -8,14 +8,19 @@ public class InventoryUI : MonoBehaviour
     public GameObject[] inventoryWindows;
 
     [Header("아이템디테일 창")] 
-    public GameObject itemDetailWindow;
+    public ItemDetailWindow itemDetailWindow;
 
     [Header("아이템 분류기")]
     public WeaponWindow weponManger;
     public BagWindow bagManager;
 
-    [Header("모든 아이템 슬롯")]
+    [Header("플레이어 인벤토리")] 
+    public PlayerInventory playerInventory;
+
+    [Header("모든 사용중인 아이템 슬롯")]
     private List<Slot> allItemSlots = new List<Slot>();
+    
+    
     
     public void CreateNewItem(Item newItem, int idx, int stackIdx)
     {
@@ -28,6 +33,25 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    public void AddItemAmount(int idx, int stackIdx)
+    {
+        for (int i = 0; i < allItemSlots.Count; i++)
+        {
+            if((allItemSlots[i].Index == idx && allItemSlots[i].StackIndex == stackIdx))
+            {
+                allItemSlots[i].AddItemAmount();
+                break;
+            }
+        
+        }
+    }
+    
+    public void RemoveItem(int idx, int stackIdx, Slot slot)
+    {
+        allItemSlots.Remove(slot);
+        playerInventory.RemoveItem(idx, stackIdx);
+    }
+    
     public void AddSlot(Slot newSlot)
     {
         allItemSlots.Add(newSlot);
@@ -36,7 +60,7 @@ public class InventoryUI : MonoBehaviour
     public void ActiveWindow(int index)
     {
         gameObject.SetActive(true);
-        itemDetailWindow.SetActive(false);
+        itemDetailWindow.gameObject.SetActive(false);
         for (int i = 0; i < inventoryWindows.Length; i++)
         {
             if(i == index)
@@ -44,5 +68,10 @@ public class InventoryUI : MonoBehaviour
             else
                 inventoryWindows[i].SetActive(false);
         }
+    }
+
+    public void UpdateItemDetailWindow(ItemUI itemUI)
+    {
+        itemDetailWindow.UpdateItem(itemUI);
     }
 }

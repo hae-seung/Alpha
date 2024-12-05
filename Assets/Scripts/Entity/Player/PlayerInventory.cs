@@ -56,7 +56,7 @@ public class PlayerInventory : MonoBehaviour
                     if (excessAmount == 0)
                     {
                         //단순 갯수 UI 업데이트
-                        UpdateItemCount();
+                        UpdateItemCount(itemId, stackIndex);
                     }
                     else
                     {
@@ -93,9 +93,14 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    private void UpdateItemCount()
+    public void RemoveItem(int idx, int stackIdx)
     {
-        
+        items[idx].RemoveAt(stackIdx);
+    }
+    
+    private void UpdateItemCount(int idx, int stackIdx)
+    {
+        inventoryUI.AddItemAmount(idx, stackIdx);
     }
 
     private void CreateNewItem(Item newItem, int idx, int stackIdx)

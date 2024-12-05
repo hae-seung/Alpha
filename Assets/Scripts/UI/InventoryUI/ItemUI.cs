@@ -9,15 +9,42 @@ public class ItemUI : MonoBehaviour
 {
     public Image itemIcon;
     public TextMeshProUGUI itemCountTxt;
-    public Item item;
-
     
-    public void SetUp(CountableItem newItem)
+    private CountableItem item;
+    private Slot parentSlot;
+    
+    public void SetUp(CountableItem newItem, Slot slot)
     {
+        parentSlot = slot;
         item = newItem;
         itemIcon.sprite = item.Data.IconImage;
         itemCountTxt.text = newItem.Amount.ToString();
     }
 
+    public void UpdateAmount()
+    {
+        itemCountTxt.text = item.Amount.ToString();
+    }
     
+    public Item GetItem()
+    {
+        return item;
+    }
+    
+    public bool ModifyItemAmount()
+    {
+        if (!item.IsEmpty)
+        {
+            itemCountTxt.text = item.Amount.ToString();
+            return false;
+        }
+        else
+            return true;
+    }
+
+    public void RemoveItemUI()
+    {
+        parentSlot.RemoveItem();
+        Destroy(gameObject);
+    }
 }

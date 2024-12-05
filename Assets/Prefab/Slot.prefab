@@ -138,7 +138,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7843905570377445839}
         m_TargetAssemblyTypeName: Slot, Assembly-CSharp
-        m_MethodName: Ooooooooo
+        m_MethodName: OnClickSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

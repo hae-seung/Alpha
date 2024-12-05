@@ -16,7 +16,7 @@ public class ItemSlotManager : MonoBehaviour
     [Header("모든 슬롯 총관리자")]
     public InventoryUI inventoryUI;
 
-    [Header("슬롯 부모오브젝트")] 
+    [Header("슬롯들의 부모트랜스폼")] 
     public RectTransform slotParent;
     
 
@@ -32,7 +32,7 @@ public class ItemSlotManager : MonoBehaviour
         if (usedSlotCount >= slotCount && slotCount>=5)
         {
             Slot newSlot =  Instantiate(slotPrefab, slotParent).GetComponent<Slot>();
-            newSlot.SetUp(newItem, idx, stackIdx);
+            newSlot.SetUp(newItem, idx, stackIdx, this);
             
             slots.Add(newSlot);
             inventoryUI.AddSlot(newSlot);
@@ -45,12 +45,23 @@ public class ItemSlotManager : MonoBehaviour
             {
                 if (!slots[i].IsUsing)
                 {
-                    slots[i].SetUp(newItem, idx, stackIdx);
+                    slots[i].SetUp(newItem, idx, stackIdx, this);
                     inventoryUI.AddSlot(slots[i]);
                     usedSlotCount++;
                     break;
                 }
             }
         }
+    }
+
+    public void RemoveSlot(int idx, int stackIdx, Slot slot)
+    {
+        usedSlotCount--;
+        inventoryUI.RemoveItem(idx, stackIdx, slot);
+    }
+    
+    public void OpenItemDetailWindow(ItemUI itemUI)
+    {
+        inventoryUI.UpdateItemDetailWindow(itemUI);
     }
 }

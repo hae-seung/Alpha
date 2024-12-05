@@ -9,6 +9,20 @@ public class ItemDetailWindow : MonoBehaviour
     public ItemAbilitySet itemAbilitySet;
     public ItemDescriptionSet itemDescriptionSet;
     public ItemUseBtnSet itemUseBtnSet;
-    
+
+
+
+    public void UpdateItem(ItemUI itemUI)
+    {
+        if(!gameObject.activeSelf)
+            gameObject.SetActive(true);
+        
+        Item item = itemUI.GetItem();
+        
+        itemInfoSet.UpdateInfo(item);
+        //itemAbilitySet.UpdateAbility();
+        itemDescriptionSet.UpdateDescription(item);
+        itemUseBtnSet.SetUpBtn(itemUI, this);
+    }
    
 }
