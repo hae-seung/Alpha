@@ -11,11 +11,11 @@ public class ItemTypeBtnSet : MonoBehaviour
     public TextMeshProUGUI curSelectedBtnText;
     public GameObject curOpendItemList;
     
-    public void onClickItemType(TextMeshProUGUI itemText, GameObject bagItemList)
+    public void onClickItemType(TextMeshProUGUI itemText, GameObject ItemList)
     {
-        if (bagItemList == curOpendItemList || itemText == curSelectedBtnText) return;
+        if (ItemList == curOpendItemList || itemText == curSelectedBtnText) return;
         ActiveBtnText(itemText);
-        ActiveBagItemList(bagItemList);
+        ActiveBagItemList(ItemList);
     }
 
     private void ActiveBagItemList(GameObject bagItemList)

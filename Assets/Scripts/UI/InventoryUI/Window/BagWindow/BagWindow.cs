@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class BagWindow : MonoBehaviour
 {
+   [Header("켜지면 모두 꺼지는 초기화 작업")] 
+   public GameObject itemListParent;
+   
    [Header("항상 켜지면 디폴트 값으로 선택되는 것")]
    public Button defaultBtn;
    public GameObject defaultBagItem;
@@ -16,12 +19,28 @@ public class BagWindow : MonoBehaviour
    public PortionListManager PortionListManager;
    public ETCListManager ETCListManager;
    public QuestListManager QuestListManager;
+
+   [Header("아이템 디테일 스크립트")] 
+   public ItemDetailWindow itemDetailWindow;
    
    
    private void OnEnable()
    {
-      EventSystem.current.SetSelectedGameObject(defaultBtn.gameObject);
+      ActiveFalseWindows();
+      
       defaultBagItem.SetActive(true);
+      EventSystem.current.SetSelectedGameObject(defaultBtn.gameObject);
+   }
+
+   private void ActiveFalseWindows()
+   {
+      Transform[] itemLists = itemListParent.GetComponentsInChildren<Transform>();
+      for (int i = 1; i < itemLists.Length; i++)
+      {
+         itemLists[i].gameObject.SetActive(false);
+      }
+      
+      itemDetailWindow.gameObject.SetActive(false);
    }
 
 
@@ -37,6 +56,10 @@ public class BagWindow : MonoBehaviour
             break;
       }
    }
-   
+
+   public void OpenItemDetailWindow(ItemUI itemUI)
+   {
+      itemDetailWindow.Open(itemUI);
+   }
    
 }

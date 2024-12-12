@@ -12,7 +12,7 @@ public class ItemDetailWindow : MonoBehaviour
 
 
 
-    public void UpdateItem(ItemUI itemUI)
+    public void Open(ItemUI itemUI)
     {
         if(!gameObject.activeSelf)
             gameObject.SetActive(true);

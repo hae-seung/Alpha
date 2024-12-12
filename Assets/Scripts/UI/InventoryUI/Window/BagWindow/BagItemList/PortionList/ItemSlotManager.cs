@@ -62,6 +62,6 @@ public class ItemSlotManager : MonoBehaviour
     
     public void OpenItemDetailWindow(ItemUI itemUI)
     {
-        inventoryUI.UpdateItemDetailWindow(itemUI);
+        inventoryUI.OpenItemDetailWindow(itemUI);
     }
 }

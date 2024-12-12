@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using OpenCover.Framework.Model;
 using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
     [Header("선택창들")]
     public GameObject[] inventoryWindows;
-
-    [Header("아이템디테일 창")] 
-    public ItemDetailWindow itemDetailWindow;
 
     [Header("아이템 분류기")]
     public WeaponWindow weponManger;
@@ -28,9 +26,7 @@ public class InventoryUI : MonoBehaviour
         if (citem != null)
             bagManager.ClassifyItem(citem, idx, stackIdx);
         else
-        {
-            
-        }
+            weponManger.Classify(newItem as EquipItem, idx, stackIdx);
     }
 
     public void AddItemAmount(int idx, int stackIdx)
@@ -60,7 +56,7 @@ public class InventoryUI : MonoBehaviour
     public void ActiveWindow(int index)
     {
         gameObject.SetActive(true);
-        itemDetailWindow.gameObject.SetActive(false);
+        
         for (int i = 0; i < inventoryWindows.Length; i++)
         {
             if(i == index)
@@ -70,8 +66,8 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    public void UpdateItemDetailWindow(ItemUI itemUI)
+    public void OpenItemDetailWindow(ItemUI itemUI)
     {
-        itemDetailWindow.UpdateItem(itemUI);
+        bagManager.OpenItemDetailWindow(itemUI);
     }
 }

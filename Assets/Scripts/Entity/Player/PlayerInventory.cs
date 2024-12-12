@@ -89,7 +89,11 @@ public class PlayerInventory : MonoBehaviour
         }
         else//방어구 무기 류
         {
+            if (!items.ContainsKey(itemId))
+                items[itemId] = new List<Item>();
             
+            items[itemId].Add(newItem);
+            CreateNewItem(newItem, itemId, items.Count - 1);
         }
     }
 
