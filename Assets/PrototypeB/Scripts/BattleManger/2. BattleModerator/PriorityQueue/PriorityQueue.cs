@@ -4,12 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-/*
-public class PriorityQueue : MonoBehaviour
-{
-    
-}
-*/
 public class PriorityQueue
 {
     //힙 자료 데이터를 담을 List 추가
@@ -20,7 +14,6 @@ public class PriorityQueue
     public PriorityQueue()
     {
         Heap = new List<Entity>();
-
     }
 
 
@@ -131,6 +124,70 @@ public class PriorityQueue
             Console.Write($"{i} ");
         }
         */
+    }
+
+    public List<Entity> PeekTopN(int n)
+    {
+        // 힙이 비어있는 경우 예외 처리
+        if (Heap.Count == 0)
+        {
+            throw new ApplicationException("자료가 없습니다.");
+        }
+
+        // 복사본 힙 생성 (원본을 수정하지 않기 위해)
+        List<Entity> tempHeap = new List<Entity>(Heap);
+
+        // 상위 N개를 저장할 리스트
+        List<Entity> topEntities = new List<Entity>();
+
+        // 복사된 힙에서 N번 pop 수행
+        for (int i = 0; i < n && tempHeap.Count > 0; i++)
+        {
+            // 루트 데이터를 가져옴
+            Entity top = tempHeap[0];
+            topEntities.Add(top);
+
+            // 힙의 마지막 데이터를 루트에 넣음
+            tempHeap[0] = tempHeap[tempHeap.Count - 1];
+            tempHeap.RemoveAt(tempHeap.Count - 1);
+
+            // 힙 정렬 (MinHeap 유지)
+            int parent = 0;
+            int count = tempHeap.Count;
+
+            while (true)
+            {
+                int leftChild = (parent * 2) + 1;
+                int rightChild = (parent * 2) + 2;
+                int smallest = parent;
+
+                // 왼쪽 자식과 비교
+                if (leftChild < count && tempHeap[leftChild].TPCount < tempHeap[smallest].TPCount)
+                {
+                    smallest = leftChild;
+                }
+
+                // 오른쪽 자식과 비교
+                if (rightChild < count && tempHeap[rightChild].TPCount < tempHeap[smallest].TPCount)
+                {
+                    smallest = rightChild;
+                }
+
+                // 더 이상 스왑이 필요 없으면 종료
+                if (smallest == parent)
+                {
+                    break;
+                }
+
+                // 스왑 수행
+                Entity temp = tempHeap[parent];
+                tempHeap[parent] = tempHeap[smallest];
+                tempHeap[smallest] = temp;
+                parent = smallest;
+            }
+        }
+
+        return topEntities;
     }
 
     public void Swap(int parant, int child)

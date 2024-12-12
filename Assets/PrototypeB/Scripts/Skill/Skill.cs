@@ -20,4 +20,7 @@ public class Skill : ScriptableObject
     public Entity owner;
     public CharacterSkill skill = null;
     public int TP = 0;
+
+    public bool IsDOTSkill = false;
+    public DOT_Skill DOTSkill;
 }

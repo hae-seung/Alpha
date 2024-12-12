@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -57,16 +58,24 @@ public class CharacterSetting : MonoBehaviour
 
             if (enemyPrefab != null)
             {
-                GameObject newEnemy = Instantiate(enemyPrefab, gameData.enemiesStartPoint[i].position, Quaternion.identity);
-                
+                //GameObject newEnemy = Instantiate(enemyPrefab, gameData.enemiesStartPoint[i].position, Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemyPrefab, gameData.enemiesStartPoint[i].position, enemyPrefab.transform.rotation);
+
+                Vector3 newEnemyPosition = newEnemy.transform.position;
+                newEnemyPosition.y += enemyPrefab.transform.position.y;
+                newEnemy.transform.position = newEnemyPosition;
+
                 //½ºÅÈ Ãß°¡ (·£´ý)
                 newEnemy.GetComponent<Entity>().stat.STR   = Random.Range(1, 4);
                 newEnemy.GetComponent<Entity>().stat.DEX   = Random.Range(1, 4);
                 newEnemy.GetComponent<Entity>().stat.INT   = Random.Range(1, 4);
                 newEnemy.GetComponent<Entity>().stat.LUCK  = Random.Range(1, 4);
-                
+
                 //NewCharacter.gameObject = enemyPrefab;
-                
+
+                newEnemy.GetComponent<Entity>().Name = "Enemy";
+
+
                 gameData.enemies.Add(newEnemy);
 
                 if (isActiveLog)

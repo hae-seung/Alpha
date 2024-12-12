@@ -7,6 +7,7 @@ public class Entity : MonoBehaviour
     public PlayerStat stat;
     public Skill nextSkill = null;
     public int TPCount = 0;
+    public string Name = "Blank";
 
     public void ChangeStat(PlayerStat _stat)
     {

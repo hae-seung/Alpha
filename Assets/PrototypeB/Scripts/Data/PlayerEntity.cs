@@ -22,6 +22,7 @@ public class PlayerEntity : Entity
     void Start()
     {
         nowWeapon = weapons[0];
+        Name = "Player";
         //UpdateSkillUI();
     }
 

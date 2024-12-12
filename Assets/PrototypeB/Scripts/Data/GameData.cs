@@ -13,7 +13,8 @@ public class GameData : MonoBehaviour
     public string mapObject;
     public Transform mapPosition;
 
-    public List<int> enemy_ID;
+    //public List<int> enemy_ID;
+    public List<string> enemy_ID;
 
     public GameObject player;
     public Transform playerStartPoint;
