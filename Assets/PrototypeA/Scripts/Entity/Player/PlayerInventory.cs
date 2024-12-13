@@ -9,23 +9,19 @@ public class PlayerInventory : MonoBehaviour
     public InventoryUI inventoryUI;
     private Dictionary<int, List<Item>> items;
     
-    private void Awake()
+    private void Start()
     {
-        PlayerManager.Instance.OnPlayerInitialized += InitInventory;
+        InitInventory();
     }
-    private void InitInventory(Character player)
-    {
-        Debug.Log("첫 인벤토리 초기화 성공");
 
-        // player.inventory.Item이 null인 경우 빈 딕셔너리로 초기화
-        if (player.inventory.Item == null)
-        {
+    private void InitInventory()
+    {
+        Debug.Log("인벤토리 초기화 성공");
+        if (PlayerManager.Instance.inventory.Item == null)
             items = new Dictionary<int, List<Item>>();
-        }
         else
         {
-            items = new Dictionary<int, List<Item>>(player.inventory.Item);
-            //todo: 씬 전환 대비 모든 아이템들에 대해 UI 초기화 작업 필요 모든 아이템들에 대해 AddItem 해주면 될듯?
+            items = new Dictionary<int, List<Item>>(PlayerManager.Instance.inventory.Item);
         }
     }
 
@@ -114,11 +110,11 @@ public class PlayerInventory : MonoBehaviour
 
     public void GetInventoryFromManager()
     {
-        items = new Dictionary<int, List<Item>>(PlayerManager.Instance.Player.inventory.Item);
+        
     }
     public void SetInventoryToManager()
     {
-        PlayerManager.Instance.Player.inventory.SetInventory(items);
+        
     }
     
 }
