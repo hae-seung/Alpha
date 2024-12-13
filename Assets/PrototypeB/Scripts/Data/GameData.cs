@@ -8,7 +8,7 @@ public class GameData : MonoBehaviour
     //인계할 데이터 -> 캐릭터(스텟, 스킬, 장비, 인벤토리), 적 캐릭터(종류, 레벨), 배경, 이벤트
     public PlayerStat playerStat;
     public PlayerEquipment equipment;
-    public PlayerInventory inventory;
+    //public PlayerInventory inventory;
 
     public string mapObject;
     public Transform mapPosition;
@@ -47,7 +47,9 @@ public class PlayerEquipment
     public int legEquipment;
 }
 
+/*
 public class PlayerInventory
 {
     public List<int> item_ID;
 }
+*/
