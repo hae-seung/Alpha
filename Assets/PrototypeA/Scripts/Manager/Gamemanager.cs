@@ -9,7 +9,6 @@ public class GameManager : Singleton<GameManager>
 {
     public void EnterBattleScene()
     {
-        SceneManager.LoadScene("BattleScene");
+        SceneManager.LoadScene("SampleScene");
     }
-    
 }
