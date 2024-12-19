@@ -6,13 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="380c0b5c-761d-4c1a-a634-83f52016d670" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/LivingEntity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/LivingEntity.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/3DMonster.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/3DMonster/Monster3D.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/3DMonster/Monster3D.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Skill/MonsterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Skill/MonsterData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/2DMonster/Monster2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/2DMonster/Monster2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/FieldManger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/FieldManger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/Gamemanager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/Gamemanager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/URP.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/URP.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI/Window/BagWindow/BagWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI/Window/BagWindow/BagWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/BattleSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/BattleSetup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/Data/GameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/Data/GameData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +46,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;PrototypeB&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;minimapUI&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -114,6 +119,9 @@
       <workItem from="1734322232696" duration="155000" />
       <workItem from="1734322544920" duration="1838000" />
       <workItem from="1734570533390" duration="306000" />
+      <workItem from="1734571452376" duration="12000" />
+      <workItem from="1734571479009" duration="3316000" />
+      <workItem from="1734574881738" duration="5454000" />
     </task>
     <servers />
   </component>

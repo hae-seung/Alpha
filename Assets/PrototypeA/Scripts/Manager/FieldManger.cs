@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FieldManager : MonoBehaviour
 {
@@ -8,8 +9,8 @@ public class FieldManager : MonoBehaviour
     
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private PlayerMovement playerMovement;
-
-    [SerializeField] private Monster2D monster;
+    [SerializeField] private SceneLoader battleSceneLoader;
+    [SerializeField] private Monster2D monster;//임시
     
     private List<Monster2D> monsters = new List<Monster2D>();
     private Dictionary<Monster2D, float> monsterDistancesBeforeMove = new Dictionary<Monster2D, float>();
@@ -19,7 +20,7 @@ public class FieldManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
-        monsters.Add(monster);
+        monsters.Add(monster);//임시
     }
 
     private void Start()
@@ -84,10 +85,10 @@ public class FieldManager : MonoBehaviour
                 float preDistance = monsterDistancesBeforeMove[monster];
                 float curDistance = CalculateDistanceToPlayer(monster);
 
-                if (curDistance < preDistance) // 거리가 가까워진 경우
+                if (curDistance < preDistance) // 이전 턴보다 거리가 가까워진 경우
                 {
                     Debug.Log($"리스트에 {monster.name} 추가!");
-                    PlayerManager.Instance.SetBattleMonsterData(monster.GetMonsterData);
+                    PlayerManager.Instance.SetBattleMonsterData(monster);
                 }
             }
         }
@@ -106,8 +107,13 @@ public class FieldManager : MonoBehaviour
     {
         if (!PlayerManager.Instance.isEmptyMonsterData())
         {
-            GameManager.Instance.EnterBattleScene();
+            EnterBattleScene();
         }
+    }
+
+    private void EnterBattleScene()
+    {
+        battleSceneLoader.EnterScene("PrototypeB/Scenes/PrototypeB_Combat");
     }
 
     private float CalculateDistanceToPlayer(Monster2D monster)

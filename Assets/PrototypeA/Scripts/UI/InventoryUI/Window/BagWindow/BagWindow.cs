@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class BagWindow : MonoBehaviour
 {
    [Header("켜지면 모두 꺼지는 초기화 작업")] 
-   public GameObject itemListParent;
+   public BagItemLists itemListParent;
    
    [Header("항상 켜지면 디폴트 값으로 선택되는 것")]
    public Button defaultBtn;
@@ -34,12 +34,7 @@ public class BagWindow : MonoBehaviour
 
    private void ActiveFalseWindows()
    {
-      Transform[] itemLists = itemListParent.GetComponentsInChildren<Transform>();
-      for (int i = 1; i < itemLists.Length; i++)
-      {
-         itemLists[i].gameObject.SetActive(false);
-      }
-      
+      itemListParent.ActiveFalseAllWindow();
       itemDetailWindow.gameObject.SetActive(false);
    }
 
