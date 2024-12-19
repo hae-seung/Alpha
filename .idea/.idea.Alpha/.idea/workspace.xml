@@ -6,20 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="380c0b5c-761d-4c1a-a634-83f52016d670" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Minimap/MinimapIcon_Enemy01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Minimap/MinimapIcon_Enemy01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Minimap/MinimapMask01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Minimap/MinimapMask01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Minimap/MinimapRound01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Minimap/MinimapRound01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Minimap/Sprite-0001.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Minimap/Sprite-0001.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Camera/Minimap/UIMiniMap.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Camera/Minimap/UIMiniMap.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/Gamemanager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/Gamemanager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/LivingEntity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/LivingEntity.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/3DMonster.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/3DMonster/Monster3D.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/3DMonster/Monster3D.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Skill/MonsterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Skill/MonsterData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +113,7 @@
       <workItem from="1734321964623" duration="164000" />
       <workItem from="1734322232696" duration="155000" />
       <workItem from="1734322544920" duration="1838000" />
+      <workItem from="1734570533390" duration="306000" />
     </task>
     <servers />
   </component>
