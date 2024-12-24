@@ -18,7 +18,7 @@ public class InventoryUI : MonoBehaviour
     [Header("모든 사용중인 아이템 슬롯")]
     private List<Slot> allItemSlots = new List<Slot>();
     
-    
+    private bool isActive = false;
     
     public void CreateNewItem(Item newItem, int idx, int stackIdx)
     {
@@ -69,5 +69,11 @@ public class InventoryUI : MonoBehaviour
     public void OpenItemDetailWindow(ItemUI itemUI)
     {
         bagManager.OpenItemDetailWindow(itemUI);
+    }
+
+    public void ActiveInventory()
+    {
+        isActive = !isActive;
+        gameObject.SetActive(isActive);
     }
 }

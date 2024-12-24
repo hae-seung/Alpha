@@ -5,19 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="380c0b5c-761d-4c1a-a634-83f52016d670" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/2DMonster/Monster2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/2DMonster/Monster2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/FieldManger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/FieldManger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/Gamemanager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/Gamemanager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/URP.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/URP.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI/Window/BagWindow/BagWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI/Window/BagWindow/BagWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/BattleSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/BattleSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/Data/GameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/Data/GameData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Cube.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Cube.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/EquipItemSlot.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/EquipItemSlot.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/EquipSelectSlot.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/EquipSelectSlot.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/InventoryItem.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/InventoryItem.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/ItemSlot.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/ItemSlot.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Monster3D.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Monster3D.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/PlayerInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI/InventoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI/InventoryUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI/OptionUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI/OptionUI.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +38,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/URP.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Inventory/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/TopBtnSet.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -122,6 +133,11 @@
       <workItem from="1734571452376" duration="12000" />
       <workItem from="1734571479009" duration="3316000" />
       <workItem from="1734574881738" duration="5454000" />
+      <workItem from="1734837313087" duration="37000" />
+      <workItem from="1734837454358" duration="3091000" />
+      <workItem from="1734932736127" duration="138000" />
+      <workItem from="1734961152439" duration="4112000" />
+      <workItem from="1734965380577" duration="1586000" />
     </task>
     <servers />
   </component>

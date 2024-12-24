@@ -3,7 +3,7 @@ using UnityEngine.Serialization;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private OptionUI optionUI;
+    [SerializeField] private InventoryUI inventoryUI;
     public Vector2 MoveDirection { get; private set; }
     private bool isMovable = false;
     
@@ -13,7 +13,7 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             isMovable = false;
-            optionUI.ActiveInventoryUI();
+            inventoryUI.ActiveInventory();
         }
         
         if (isMovable)
