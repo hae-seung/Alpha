@@ -21,8 +21,8 @@ public class CharacterSetting : MonoBehaviour
         PlaceEnemyObject(gameData);
     }
 
-    private void PlacePlayerObject(GameData gameData)                                                   // ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ °¡Á®¿Í¼­ ¿ÀºêÁ§Æ® »ı¼º
-    {                                                                                                   // GameData ÆÄÀÏÀÇ player º¯¼ö¿¡ µ¥ÀÌÅÍ ÀúÀå
+    private void PlacePlayerObject(GameData gameData)                                                   // í”Œë ˆì´ì–´ ë°ì´í„° ê°€ì ¸ì™€ì„œ ì˜¤ë¸Œì íŠ¸ ìƒì„±
+    {                                                                                                   // GameData íŒŒì¼ì˜ player ë³€ìˆ˜ì— ë°ì´í„° ì €ì¥
         GameObject playerPrefab = Resources.Load<GameObject>("Player");
 
         if (playerPrefab != null)
@@ -39,7 +39,7 @@ public class CharacterSetting : MonoBehaviour
                 Debug.Log("Player instantiated");
             }
 
-            //Àåºñ Ãß°¡
+            //ì¥ë¹„ ì¶”ê°€
         }
         else
         {
@@ -50,9 +50,9 @@ public class CharacterSetting : MonoBehaviour
         }
     }
 
-    private void PlaceEnemyObject(GameData gameData)                                                    // Àû µ¥ÀÌÅÍ °¡Á®¿Í¼­ ¿ÀºêÁ§Æ® »ı¼º
-    {                                                                                                   // GameData ÆÄÀÏÀÇ enemies º¯¼ö¿¡ µ¥ÀÌÅÍ ÀúÀå
-        for (int i = 0; i < gameData.enemy_ID.Count; i++)                                               // ÃÊ±â ½ºÅÈÀº 1~4 »çÀÌÀÇ °ªÀ» ³Ö¾îÁÜ
+    private void PlaceEnemyObject(GameData gameData)                                                    // ì  ë°ì´í„° ê°€ì ¸ì™€ì„œ ì˜¤ë¸Œì íŠ¸ ìƒì„±
+    {                                                                                                   // GameData íŒŒì¼ì˜ enemies ë³€ìˆ˜ì— ë°ì´í„° ì €ì¥
+        for (int i = 0; i < gameData.enemy_ID.Count; i++)                                               // ì´ˆê¸° ìŠ¤íƒ¯ì€ 1~4 ì‚¬ì´ì˜ ê°’ì„ ë„£ì–´ì¤Œ
         {
             GameObject enemyPrefab = Resources.Load<GameObject>(gameData.enemy_ID[i].ToString());
 
@@ -65,7 +65,7 @@ public class CharacterSetting : MonoBehaviour
                 newEnemyPosition.y += enemyPrefab.transform.position.y;
                 newEnemy.transform.position = newEnemyPosition;
 
-                //½ºÅÈ Ãß°¡ (·£´ı)
+                //ìŠ¤íƒ¯ ì¶”ê°€ (ëœë¤)
                 newEnemy.GetComponent<Entity>().stat.STR   = Random.Range(1, 4);
                 newEnemy.GetComponent<Entity>().stat.DEX   = Random.Range(1, 4);
                 newEnemy.GetComponent<Entity>().stat.INT   = Random.Range(1, 4);

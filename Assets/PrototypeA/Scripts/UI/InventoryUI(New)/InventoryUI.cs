@@ -1,0 +1,72 @@
+using System.Collections;
+using System.Collections.Generic;
+using OpenCover.Framework.Model;
+using UnityEngine;
+
+public class InventoryUI : MonoBehaviour
+{
+    [Header("선택창들")]
+    public GameObject[] inventoryWindows;
+
+    [Header("플레이어 인벤토리")] 
+    public PlayerInventory playerInventory;
+
+    [Header("모든 사용중인 아이템 슬롯")]
+    private List<Slot> allItemSlots = new List<Slot>();
+    
+    private bool isActive = false;
+    
+
+    public void AddItemAmount(int idx, int stackIdx)
+    {
+       
+    }
+    
+    public void RemoveItem(int idx, int stackIdx, Slot slot)
+    {
+        allItemSlots.Remove(slot);
+        playerInventory.RemoveItem(idx, stackIdx);
+    }
+    
+    public void AddSlot(Slot newSlot)
+    {
+        allItemSlots.Add(newSlot);
+    }
+    
+    public void ActiveWindow(int index)
+    {
+        gameObject.SetActive(true);
+        
+        for (int i = 0; i < inventoryWindows.Length; i++)
+        {
+            if(i == index)
+                inventoryWindows[i].SetActive(true);
+            else
+                inventoryWindows[i].SetActive(false);
+        }
+    }
+
+   
+
+    public void ActiveInventory()
+    {
+        isActive = !isActive;
+        gameObject.SetActive(isActive);
+    }
+    
+    ////////////////////////////////////////new//////////////////////////////////////////
+    ///
+    ///
+
+    public ItemManagerDirector itemManagerDirector;//방어구 악세서리 무기 소비 미션 총 관리자
+    
+    public void CreateNewItem(Item newItem, int idx, int stackIdx)
+    {
+        switch (newItem)
+        {
+            case ArmorItem armorItem :
+                itemManagerDirector.CreateArmorItem(armorItem);
+                break;
+        }
+    }
+}

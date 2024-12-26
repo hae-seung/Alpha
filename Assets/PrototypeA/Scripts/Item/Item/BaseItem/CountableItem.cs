@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,9 @@ public abstract class CountableItem : Item
    public bool IsMax => Amount >= CountableData.MaxAmount;
 
    public bool IsEmpty => Amount <= 0;
-   
+
+
+   public event Action onUpdateItemCount;
     
     public CountableItem(CountableItemData data, int amount = 1) : base(data)
     {
