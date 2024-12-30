@@ -13,9 +13,8 @@ public abstract class CountableItem : Item
    public bool IsMax => Amount >= CountableData.MaxAmount;
 
    public bool IsEmpty => Amount <= 0;
-
-
-   public event Action onUpdateItemCount;
+   
+   public event Action<int> OnUpdateItemCount;
     
     public CountableItem(CountableItemData data, int amount = 1) : base(data)
     {
@@ -35,6 +34,12 @@ public abstract class CountableItem : Item
 
         return (nextAmount > MaxAmount) ? (nextAmount - MaxAmount) : 0;
     }
+
+    public void UpdateItemCount()
+    {
+        OnUpdateItemCount?.Invoke(Amount);
+    }
+    
     
     public CountableItem Clone(int amount)
     {

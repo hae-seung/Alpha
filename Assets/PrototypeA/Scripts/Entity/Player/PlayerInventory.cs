@@ -1,13 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
     public InventoryUI inventoryUI;
+    
+    private Inventory inventory;
+    
     private Dictionary<int, List<Item>> items;
+    private EquippedItem equippedItem;
     
     private void Start()
     {
@@ -16,13 +21,17 @@ public class PlayerInventory : MonoBehaviour
 
     private void InitInventory()
     {
-        Debug.Log("인벤토리 초기화 성공");
-        if (PlayerManager.Instance.inventory.Item == null)
-            items = new Dictionary<int, List<Item>>();
+        if (PlayerManager.Instance.inventory == null)
+        {
+            inventory = new Inventory();
+        }
         else
         {
-            items = new Dictionary<int, List<Item>>(PlayerManager.Instance.inventory.Item);
+            inventory = PlayerManager.Instance.inventory;
         }
+        
+        items = inventory.GetItem;
+        equippedItem = inventory.GetEquippedItem;
     }
 
 
@@ -49,19 +58,15 @@ public class PlayerInventory : MonoBehaviour
                 if (existingItem != null)//갯수가 다 채워지지 않은 아이템 발견
                 {
                     int excessAmount = existingItem.AddAmountAndGetExcess(amount);
-                    if (excessAmount == 0)
+                    UpdateItemCount(existingItem);//수량 추가후 바로 UI 업데이트
+                    
+                    if (excessAmount != 0)//수량을 추가하자 max를 찍고 더 나온 경우
                     {
-                        //단순 갯수 UI 업데이트
-                        UpdateItemCount(itemId, stackIndex);
-                    }
-                    else
-                    {
-                        //스택리스트에 새로 추가 excessAmount 만큼
                         CountableItem newCountableItem = countableItem.Clone(excessAmount);
                         items[itemId].Add(newCountableItem);
                         
                         //UI에 새로운 아이템 생성
-                        CreateNewItem(newCountableItem, itemId, stackIndex + 1);
+                        CreateNewItem(newCountableItem, stackIndex + 1);
                     }
                 }
                 else //리스트 아이템이 가득찬 경우
@@ -70,7 +75,7 @@ public class PlayerInventory : MonoBehaviour
                     items[itemId].Add(newCountableItem);
                     
                     //UI에 새로운 아이템 생성
-                    CreateNewItem(newCountableItem, itemId, stackIndex + 1);
+                    CreateNewItem(newCountableItem,stackIndex + 1);
                 }
                 
             }
@@ -80,7 +85,7 @@ public class PlayerInventory : MonoBehaviour
                 items[itemId].Add(newItem);
                 
                 //UI에 새로운 아이템 생성
-                CreateNewItem(newItem, itemId, 0);
+                CreateNewItem(newItem, 0);
             }
         }
         else//방어구 무기 류
@@ -89,25 +94,48 @@ public class PlayerInventory : MonoBehaviour
                 items[itemId] = new List<Item>();
             
             items[itemId].Add(newItem);
-            CreateNewItem(newItem, itemId, items.Count - 1);
+            CreateNewArmorItem(newItem, items.Count - 1);
         }
     }
-
-    public void RemoveItem(int idx, int stackIdx)
+    
+    private void UpdateItemCount(CountableItem citem)
     {
-        items[idx].RemoveAt(stackIdx);
+        inventoryUI.AddItemAmount(citem);
+    }
+
+    private void CreateNewItem(Item newItem, int stackIdx)
+    {
+        newItem.OnInventoryItemRemove += RemoveItem; 
+        inventoryUI.CreateNewItem(newItem,stackIdx);
+    }
+
+    private void CreateNewArmorItem(Item newItem, int stackIdx)
+    {
+        newItem.OnEquipOrSwapItem += EquipOrSwapItem;
+        inventoryUI.CreateNewItem(newItem,stackIdx);
+    }
+
+    private void RemoveItem(Item item)
+    {
+        item.OnInventoryItemRemove -= RemoveItem;//제거될때 구독해지
+        if (items.TryGetValue(item.Data.Id, out List<Item> itemList))
+            itemList.Remove(item);
+    }
+
+    private void EquipOrSwapItem(Item item)
+    {
+        item.OnEquipOrSwapItem -= EquipOrSwapItem;
+        RemoveItem(item); //리스트에서 아이템 삭제
+        
+        //장착 아이템에 아이템 장착
+        //1. 장착된 아이템에 해당 부위와 동일한 아이템이 이미 있는지 확인
+        //2. 있다면 둘이 스왑
+        //3. 없다면 그저 아이템 장착
+        
+        
     }
     
-    private void UpdateItemCount(int idx, int stackIdx)
-    {
-        inventoryUI.AddItemAmount(idx, stackIdx);
-    }
-
-    private void CreateNewItem(Item newItem, int idx, int stackIdx)
-    {
-        inventoryUI.CreateNewItem(newItem, idx, stackIdx);
-    }
-
+    
     public void GetInventoryFromManager()
     {
         
@@ -116,5 +144,10 @@ public class PlayerInventory : MonoBehaviour
     {
         
     }
+    
+}
+
+public class EquippedItem
+{
     
 }

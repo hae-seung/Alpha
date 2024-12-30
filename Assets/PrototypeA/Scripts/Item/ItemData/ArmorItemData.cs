@@ -13,12 +13,6 @@ public enum ArmorType
     Boots,   // 신발
 }
 
-[System.Serializable]
-public class StatModifier
-{
-    public StatType statType;
-    public int value;
-}
 
 [CreateAssetMenu(fileName = "ArmorItemData", menuName = "SO/ItemData/ArmorItemData")]
 public class ArmorItemData : EquipItemData

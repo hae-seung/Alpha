@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmorItem : EquipItem
+public class ArmorItem : EquipItem<ArmorType>
 {
    private ArmorItemData data;
 
@@ -12,8 +12,9 @@ public class ArmorItem : EquipItem
       this.data = data;
    }
 
-   public ArmorType GetArmorType()
+   public override ArmorType ItemType()
    {
       return data.GetArmorType();
    }
+   
 }

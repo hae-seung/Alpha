@@ -6,3 +6,8 @@ public interface IUseableItem
 {
    public bool Use();
 }
+
+public interface IEquippable
+{
+   public void EquipOrSwapItem(Item item);
+}

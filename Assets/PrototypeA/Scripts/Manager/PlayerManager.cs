@@ -11,7 +11,6 @@ public class PlayerManager : Singleton<PlayerManager>
     private List<string> battlelMonsterDatas = new List<string>();//배틀 진입하는 몬스터
     public Inventory inventory;
     
-    
     protected override void Awake()
     {
         base.Awake();
@@ -28,6 +27,8 @@ public class PlayerManager : Singleton<PlayerManager>
     {
         return battlelMonsterDatas;
     }
+
+    
 
    
     public bool isEmptyMonsterData()

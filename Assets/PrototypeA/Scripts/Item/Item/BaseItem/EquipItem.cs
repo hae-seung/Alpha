@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class EquipItem : Item
+public abstract class EquipItem<T> : Item, IEquippable where T : Enum
 {
    public EquipItemData EquipData { get; private set; }
+   
+   
    private int durability;
    public int Durability
    {
@@ -26,5 +30,11 @@ public class EquipItem : Item
       Durability = data.MaxDurability;
    }
    
-   
+   public void EquipOrSwapItem(Item item)//인터페이스
+   {
+      InvokeEquipOrSwapItem(item);
+   }
+
+   public abstract T ItemType();
+
 }
