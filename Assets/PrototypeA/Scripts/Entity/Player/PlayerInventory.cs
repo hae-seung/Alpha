@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
@@ -117,25 +118,59 @@ public class PlayerInventory : MonoBehaviour
 
     private void RemoveItem(Item item)
     {
-        item.OnInventoryItemRemove -= RemoveItem;//제거될때 구독해지
+        item.OnInventoryItemRemove -= RemoveItem;//리스트에서 제거될때 구독해지
         if (items.TryGetValue(item.Data.Id, out List<Item> itemList))
             itemList.Remove(item);
     }
 
     private void EquipOrSwapItem(Item item)
     {
+        // 구독 해제
         item.OnEquipOrSwapItem -= EquipOrSwapItem;
-        RemoveItem(item); //리스트에서 아이템 삭제
-        
-        //장착 아이템에 아이템 장착
-        //1. 장착된 아이템에 해당 부위와 동일한 아이템이 이미 있는지 확인
-        //2. 있다면 둘이 스왑
-        //3. 없다면 그저 아이템 장착
-        
-        
+        // 인벤토리에서 제거
+        RemoveItem(item);
+        //인벤토리에서 빠져나갔으니 allTab이 있어서 다른 탭들도 동기화 필요
+        inventoryUI.RemoveItemAllTabs(item);//CountableItem 할때도 똑같이 적용됨
+
+        var (isEquippedItem, isSwapped) = equippedItem.EquipOrSwapItem(item);
+        if (isSwapped)
+        {
+            // 기존 아이템의 이벤트 해제
+            isEquippedItem.OnUnequipItem -= UnEquipItem;
+            // 기존 아이템 인벤토리에 추가
+            AddItem(isEquippedItem);
+            // 새 아이템 장착
+            inventoryUI.WearItem(item);
+            //새아이템에 대한 이벤트 구독
+            item.OnUnequipItem += UnEquipItem;
+        }
+        else
+        {
+            // 새 아이템의 이벤트 구독
+            item.OnUnequipItem += UnEquipItem;
+            // 새 아이템 장착
+            inventoryUI.WearItem(item);
+        }
+
+       
     }
-    
-    
+
+
+    public void UnEquipItem(Item item)
+    {
+        //이벤트가 발생했으니 구독 해제
+        item.OnUnequipItem -= UnEquipItem;
+
+        // 딕셔너리에서 제거
+        equippedItem.RemoveItem(item);
+
+        // 인벤토리에 추가
+        AddItem(item);
+
+        Debug.Log($"Item {item} unequipped and added to inventory.");
+    }
+
+   
     public void GetInventoryFromManager()
     {
         
@@ -144,10 +179,5 @@ public class PlayerInventory : MonoBehaviour
     {
         
     }
-    
-}
-
-public class EquippedItem
-{
     
 }

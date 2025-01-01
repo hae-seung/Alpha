@@ -8,4 +8,9 @@ public class AccItemManager : MonoBehaviour
    {
       
    }
+
+   public void RemoveItem()
+   {
+      
+   }
 }

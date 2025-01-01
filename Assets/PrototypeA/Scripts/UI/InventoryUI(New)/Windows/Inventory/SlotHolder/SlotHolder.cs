@@ -7,7 +7,7 @@ public class SlotHolder : MonoBehaviour
 {
     public List<Slot> slots = new List<Slot>();
     public GameObject slotPrefab;
-    public RectTransform slotParent;
+    public RectTransform rect;
     
     private int usingSlotCnt = 0;
     private int totalSlotCnt = 0;
@@ -20,9 +20,9 @@ public class SlotHolder : MonoBehaviour
 
         if (usingSlotCnt == totalSlotCnt)
         {
-            Slot newSlot = Instantiate(slotPrefab, slotParent).GetComponent<Slot>();
+            Slot newSlot = Instantiate(slotPrefab, rect).GetComponent<Slot>();
             //슬롯 셋업
-            newSlot.SetUp(newItem);
+            newSlot.SetUp(newItem, this);
             slots.Add(newSlot);
             totalSlotCnt++;
         }
@@ -33,12 +33,28 @@ public class SlotHolder : MonoBehaviour
                 if (!slot.IsUsing)
                 {
                     //슬롯셋업
-                    slot.SetUp(newItem);
+                    slot.SetUp(newItem, this);
                     break;
                 }
             }
         }
         
         usingSlotCnt++;
+    }
+
+    public void RemoveItem(Item item)
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.IsUsing && slot.GetItem() == item)
+                slot.EndSlotUsage();
+        }
+    }
+    
+    
+    
+    public void FreeSlot()
+    {
+        usingSlotCnt--;
     }
 }

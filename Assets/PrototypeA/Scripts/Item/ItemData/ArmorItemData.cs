@@ -29,5 +29,5 @@ public class ArmorItemData : EquipItemData
     public ArmorType GetArmorType()
     {
         return armorType;
-}
+    }
 }

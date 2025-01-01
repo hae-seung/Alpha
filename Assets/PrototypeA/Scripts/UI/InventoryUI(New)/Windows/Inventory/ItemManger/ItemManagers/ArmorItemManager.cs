@@ -12,11 +12,20 @@ public class ArmorItemManager : MonoBehaviour
    
    public SlotHolder allItems;//전체 탭은 따로 빼둠
    public ArmortypeSlotHolder datas; //딕셔너리임
+   
    public void CreateItem(ArmorItem armorItem)
    {
-      ArmorType type = armorItem.ItemType();
+      ArmorType type = armorItem.GetItemTypeValue();
       
       allItems.CreateNewItem(armorItem);
       datas[type].CreateNewItem(armorItem);
+   }
+
+   public void RemoveItem(ArmorItem armorItem)
+   {
+      ArmorType type = armorItem.GetItemTypeValue();
+
+      allItems.RemoveItem(armorItem);
+      datas[type].RemoveItem(armorItem);
    }
 }

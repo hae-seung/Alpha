@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,5 +10,7 @@ public interface IUseableItem
 
 public interface IEquippable
 {
-   public void EquipOrSwapItem(Item item);
+   void EquipOrSwapItem(Item item);
+   void UnEquipItem(Item item);
+   Enum GetItemType();
 }

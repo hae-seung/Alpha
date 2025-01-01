@@ -8,4 +8,9 @@ public class WeaponItemManager : MonoBehaviour
    {
       
    }
+
+   public void RemoveItem()
+   {
+      
+   }
 }

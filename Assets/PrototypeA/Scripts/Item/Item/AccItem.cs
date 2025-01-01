@@ -1,20 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class AccItem : EquipItem<AccType>
 {
-    private AccItemData data;
-    
-    public AccItem(AccItemData data) : base(data)
+    private AccType accType;
+
+    public AccItem(AccItemData data, AccType type) : base(data)
     {
-        this.data = data;
+        accType = type;
     }
 
-
-    public override AccType ItemType()
+    public override AccType GetItemTypeValue()
     {
-        throw new NotImplementedException();
-    } 
+        return accType;
+    }
 }

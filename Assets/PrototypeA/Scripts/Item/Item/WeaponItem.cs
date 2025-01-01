@@ -12,7 +12,7 @@ public class WeaponItem : EquipItem<WeponType>
       this.data = data;
    }
 
-   public override WeponType ItemType()
+   public override WeponType GetItemTypeValue()
    {
       throw new NotImplementedException();
    }

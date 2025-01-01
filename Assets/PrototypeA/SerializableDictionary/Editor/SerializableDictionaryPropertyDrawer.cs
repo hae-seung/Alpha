@@ -5,8 +5,8 @@ using UnityEditor;
 using System.Reflection;
 using System;
 
-
 [CustomPropertyDrawer(typeof(ArmortypeSlotHolder))]
+
 public class SerializableDictionaryPropertyDrawer : PropertyDrawer
 {
 	const string KeysFieldName = "m_keys";

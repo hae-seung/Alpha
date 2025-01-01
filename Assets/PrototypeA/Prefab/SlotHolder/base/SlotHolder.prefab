@@ -75,7 +75,7 @@ MonoBehaviour:
   - {fileID: 644194472662795696}
   - {fileID: 7160247065065708137}
   slotPrefab: {fileID: 945951109255143987, guid: 0b1a0febefb48cd4db329e945dbfe6cc, type: 3}
-  slotParent: {fileID: 7942940985754134087}
+  rect: {fileID: 7942940985754134087}
 --- !u!1 &3052047846022196498
 GameObject:
   m_ObjectHideFlags: 0

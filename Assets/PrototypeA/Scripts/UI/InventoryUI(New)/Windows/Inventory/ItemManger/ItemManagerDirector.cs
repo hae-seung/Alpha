@@ -10,21 +10,41 @@ public class ItemManagerDirector : MonoBehaviour
     public WeaponItemManager weaponItemManager;
     public ConsumeItemManager consumeItemManager;
     public MissionItemManager missionItemManager;
-    
-    
-    public void CreateArmorItem(ArmorItem armorItem)
+
+    public void CreateNewItem(Item item)
     {
-        armorItemManager.CreateItem(armorItem);
+        switch (item)
+        {
+            case ArmorItem armorItem :
+                armorItemManager.CreateItem(armorItem);
+                break;
+            case AccItem accItem:
+                accItemManager.CreateItem();
+                break;
+            case WeaponItem weaponItem:
+                weaponItemManager.CreateItem();
+                break;
+            
+            //todo: 아이템 클래스 수정
+        }
     }
 
-    public void CreateAccessoriesItem()
+    public void RemoveItemAllTabs(Item item)
     {
-        accItemManager.CreateItem();
-    }
-
-    public void CreateWeaponItem()
-    {
-        weaponItemManager.CreateItem();
+        switch (item)
+        {
+            case ArmorItem armorItem :
+                armorItemManager.RemoveItem(armorItem);
+                break;
+            case AccItem accItem:
+                accItemManager.RemoveItem();
+                break;
+            case WeaponItem weaponItem:
+                weaponItemManager.RemoveItem();
+                break;
+            
+            //todo: 아이템 클래스 수정
+        }
     }
 
     public void CreateConsumeItem()
