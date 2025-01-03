@@ -8,21 +8,29 @@ using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public RectTransform rect;
-    public Image image;
-    public GameObject itemUIPrefab;
+    private RectTransform rect;
+    private Image image;
     private ItemUI itemUI;
     private SlotHolder parentSlotHolder;
-
+    
+    public GameObject itemUIPrefab;
+    public Sprite emptySlotImage;
+    public Sprite selectSlotImage;
     public bool IsUsing { get; private set; } = false;
 
     public void SetUp(Item newItem, SlotHolder slotHolder)
     {
+        rect = GetComponent<RectTransform>();
+        image = GetComponent<Image>();
+        
         parentSlotHolder = slotHolder;
         IsUsing = true;
+        
         itemUI = Instantiate(itemUIPrefab, rect).GetComponent<ItemUI>();
         itemUI.SetUp(newItem, this);
         itemUI.OnDestroyItemUI += EndSlotUsage;
+
+        image.sprite = selectSlotImage;
     }
     
     public void OnPointerEnter(PointerEventData eventData)
@@ -53,6 +61,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         IsUsing = false;
         image.color = Color.white;
+        image.sprite = emptySlotImage;
         parentSlotHolder.FreeSlot();
     }
 }

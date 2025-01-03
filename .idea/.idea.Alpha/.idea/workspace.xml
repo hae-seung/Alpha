@@ -5,33 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="380c0b5c-761d-4c1a-a634-83f52016d670" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/SlotHolder.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/SlotHolder.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/ScriptableObject/Item/Armor/ArmorItemData 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/ScriptableObject/Item/Armor/ArmorItemData 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/Inventory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/Inventory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/PlayerInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/PlayerInventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/AccItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/AccItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/ArmorItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/ArmorItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/BaseItem/EquipItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/BaseItem/EquipItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/BaseItem/IUseableItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/BaseItem/IUseableItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/BaseItem/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/BaseItem/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/WeaponItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/WeaponItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemData/ArmorItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemData/ArmorItemData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/InventoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/InventoryUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/ItemManger/ItemManagerDirector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/ItemManger/ItemManagerDirector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/ItemManger/ItemManagers/AccItemManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/ItemManger/ItemManagers/AccItemManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/ItemManger/ItemManagers/ArmorItemManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/ItemManger/ItemManagers/ArmorItemManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/ItemManger/ItemManagers/WeaponItemManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/ItemManger/ItemManagers/WeaponItemManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipAccSlot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipAccSlot.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipArmorSlot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipArmorSlot.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/ItemUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/ItemUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/ItemUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/ItemUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/SlotHolder/All Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/SlotHolder/All Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/HP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/HP.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/Weapon UI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/Weapon UI.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/break.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/break.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/camp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/camp.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/mana.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/mana.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/map_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/map_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/map_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/map_02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/map_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/map_03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/map_04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/map_04.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/player icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/player icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/quest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/quest.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/time.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/warp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/warp.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/TopBtnSet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/TopBtnSet.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/Button/Btns.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/Button/Btns.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/Button/RegionBtn.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/Button/RegionBtn.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipItemPanel/EquipSlotHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipItemPanel/EquipSlotHolder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/Slot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/Slot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/SlotHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/SlotHolder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/SerializableDictionary/Editor/SerializableDictionaryPropertyDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/SerializableDictionary/Editor/SerializableDictionaryPropertyDrawer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,6 +179,8 @@
       <workItem from="1735674093341" duration="2617000" />
       <workItem from="1735676770072" duration="674000" />
       <workItem from="1735744399159" duration="10682000" />
+      <workItem from="1735907636809" duration="7182000" />
+      <workItem from="1735919963150" duration="553000" />
     </task>
     <servers />
   </component>

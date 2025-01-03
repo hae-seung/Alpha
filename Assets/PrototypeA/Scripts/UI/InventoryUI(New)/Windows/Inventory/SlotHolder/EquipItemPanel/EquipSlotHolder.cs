@@ -7,7 +7,6 @@ using UnityEngine;
 public class EquipSlotHolder : MonoBehaviour
 {
     public List<EquipSlot> slots;
-    public EquipItemPanel equipItemPanel;
         
     
     public void WearItem(Item item) 
