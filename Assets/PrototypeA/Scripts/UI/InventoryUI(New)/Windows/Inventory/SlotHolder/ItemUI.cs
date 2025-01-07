@@ -19,7 +19,7 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     private float lastClickTime = 0f;
     private float doubleClickThreshold = 0.3f;
 
-    public event Action OnDestroyItemUI;
+    public event Action OnDestroyItemUI;//slot이 구독
     
     public void SetUp(Item newItem, Slot slot)
     {
@@ -105,17 +105,21 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
             return;
         }
 
-        if (item is IUseableItem useableItem)
+        if (item is IUseable useableItem)//포션 아이템만 걸러짐
         {
-            Debug.Log("아이템 사용!");
+            int amount = useableItem.Use();
+            if (amount <= 0)
+            {
+                item.RemoveItemFromInventory(item); //인벤토리 딕셔너리에서 아이템 제거
+                OnDestroyItemUI?.Invoke();//ui제거 및 슬롯 초기화
+            }
+            else
+                UpdateCountText(amount);//text 수정(감소)
         }
         else if (item is IEquippable equipItem)
         {
-            Debug.Log("장착 또는 해제 아이템 처리 중...");
             if (!isEquipped)
-            {
                 equipItem.EquipOrSwapItem(item);
-            }
             else
             {
                 isEquipped = false;

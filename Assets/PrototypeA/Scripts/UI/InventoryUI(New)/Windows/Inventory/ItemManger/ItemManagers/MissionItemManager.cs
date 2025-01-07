@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MissionItemManager : MonoBehaviour
 {
-    public void CreateItem()
+    public SlotHolder allItems;
+    public void CreateItem(Item item)
     {
-      
+        allItems.CreateNewItem(item);
     }
 }

@@ -7,6 +7,7 @@ public class AccItem : EquipItem<AccType>
         accType = type;
     }
 
+
     public override AccType GetItemTypeValue()
     {
         return accType;

@@ -6,7 +6,11 @@ using UnityEngine;
 [Serializable]
 public enum AccType
 {
-   
+   Hat,
+   Neck,
+   Earring,
+   Bracelet,
+   Ring
 }
 
 public class AccItemData : EquipItemData

@@ -19,13 +19,17 @@ public class ItemManagerDirector : MonoBehaviour
                 armorItemManager.CreateItem(armorItem);
                 break;
             case AccItem accItem:
-                accItemManager.CreateItem();
+                accItemManager.CreateItem(accItem);
                 break;
             case WeaponItem weaponItem:
                 weaponItemManager.CreateItem();
                 break;
-            
-            //todo: 아이템 클래스 수정
+            case IConsumable consumable:
+                consumeItemManager.CreateItem(consumable);
+                break;
+            case MissionItem missionItem:
+                missionItemManager.CreateItem(missionItem);
+                break;
         }
     }
 
@@ -37,23 +41,13 @@ public class ItemManagerDirector : MonoBehaviour
                 armorItemManager.RemoveItem(armorItem);
                 break;
             case AccItem accItem:
-                accItemManager.RemoveItem();
+                accItemManager.RemoveItem(accItem);
                 break;
             case WeaponItem weaponItem:
                 weaponItemManager.RemoveItem();
                 break;
             
-            //todo: 아이템 클래스 수정
+            //todo : Consume이랑 Mission은 구현 불필요
         }
-    }
-
-    public void CreateConsumeItem()
-    {
-        consumeItemManager.CreateItem();
-    }
-
-    public void CreateMissionItem()
-    {
-        missionItemManager.CreateItem();
     }
 }

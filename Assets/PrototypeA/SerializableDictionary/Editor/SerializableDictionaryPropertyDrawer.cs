@@ -6,6 +6,8 @@ using System.Reflection;
 using System;
 
 [CustomPropertyDrawer(typeof(ArmortypeSlotHolder))]
+[CustomPropertyDrawer(typeof(AcctypeSlotHolder))]
+[CustomPropertyDrawer(typeof(ConsumeTypeSlotHolder))]
 
 public class SerializableDictionaryPropertyDrawer : PropertyDrawer
 {

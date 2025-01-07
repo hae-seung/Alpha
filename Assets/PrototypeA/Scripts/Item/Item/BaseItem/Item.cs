@@ -13,7 +13,7 @@ public abstract class Item
    public event Action<Item> OnEquipOrSwapItem;
    public event Action<Item> OnUnequipItem;
    
-   private void RemoveItemFromInventory(Item item)//소비아이템 소모시 자동 발생 CountableItem 클래스에서 호출
+   public void RemoveItemFromInventory(Item item)//소비아이템 소모시 자동 발생 CountableItem 클래스에서 호출
    {
       OnInventoryItemRemove?.Invoke(item);
    }
