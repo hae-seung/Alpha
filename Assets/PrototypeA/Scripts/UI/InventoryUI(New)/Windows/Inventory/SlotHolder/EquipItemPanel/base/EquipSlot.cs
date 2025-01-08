@@ -21,7 +21,6 @@ public abstract class EquipSlot : MonoBehaviour, IPointerEnterHandler, IPointerE
             IsUsing = true;
             itemUI = Instantiate(itemUIPrefab, rect).GetComponent<ItemUI>();
             itemUI.SetUp(item, this);
-            itemUI.OnDestroyItemUI += EndSlotUsage;
         }
         else
         {
@@ -33,7 +32,6 @@ public abstract class EquipSlot : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         if (itemUI != null)
         {
-            itemUI.OnDestroyItemUI -= EndSlotUsage;
             Destroy(itemUI.gameObject);
             itemUI = null;
         }

@@ -28,7 +28,6 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         
         itemUI = Instantiate(itemUIPrefab, rect).GetComponent<ItemUI>();
         itemUI.SetUp(newItem, this);
-        itemUI.OnDestroyItemUI += EndSlotUsage;
 
         image.sprite = selectSlotImage;
     }
@@ -54,7 +53,6 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (itemUI != null)
         {
-            itemUI.OnDestroyItemUI -= EndSlotUsage;
             Destroy(itemUI.gameObject);
             itemUI = null;
         }

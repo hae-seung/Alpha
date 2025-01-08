@@ -47,7 +47,8 @@ public class ItemManagerDirector : MonoBehaviour
                 weaponItemManager.RemoveItem();
                 break;
             
-            //todo : Consume이랑 Mission은 구현 불필요
+            //Consume이랑 Mission은 AllTab이 없어서 구현 불필요
         }
     }
+    
 }

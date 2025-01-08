@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class CountableItem : Item
 {
-   public CountableItemData CountableData { get; private set; }
+   protected CountableItemData CountableData { get; private set; }
    
    public int Amount { get; protected set; }
    public int MaxAmount => CountableData.MaxAmount;

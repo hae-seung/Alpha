@@ -129,8 +129,9 @@ public class PlayerInventory : MonoBehaviour
         item.OnEquipOrSwapItem -= EquipOrSwapItem;
         // 인벤토리에서 제거
         RemoveItem(item);
-        //인벤토리에서 빠져나갔으니 allTab이 있어서 다른 탭들도 동기화 필요
-        inventoryUI.RemoveItemAllTabs(item);//CountableItem 할때도 똑같이 적용됨
+        
+        //인벤토리에서 빠져나갔으니 itemUI 파괴(allTab이 있어서 여기서 파괴)
+        inventoryUI.RemoveItemAllTabs(item);
 
         var (isEquippedItem, isSwapped) = equippedItem.EquipOrSwapItem(item);
         if (isSwapped)

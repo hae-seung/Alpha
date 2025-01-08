@@ -11,7 +11,8 @@ public class StatModifier
 
 public abstract class EquipItemData : ItemData
 {
-   [SerializeField] private int maxDurability = 100;
+   [SerializeField] 
+   protected int maxDurability = 100;
 
    public int MaxDurability => maxDurability;
 }

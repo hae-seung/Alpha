@@ -1,10 +1,14 @@
+
+
 public class AccItem : EquipItem<AccType>
 {
+    private AccItemData data;
     private AccType accType;
 
-    public AccItem(AccItemData data, AccType type) : base(data)
+    public AccItem(AccItemData data) : base(data)
     {
-        accType = type;
+        this.data = data;
+        accType = data.GetAccType();
     }
 
 
