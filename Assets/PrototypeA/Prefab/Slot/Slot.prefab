@@ -135,4 +135,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemUIPrefab: {fileID: 88185381622055401, guid: 9d3b07d12691b7e44b5767b811d49025, type: 3}
   emptySlotImage: {fileID: 21300000, guid: 7653c12dca4b8a242954b13c450317de, type: 3}
-  selectSlotImage: {fileID: 21300000, guid: 08945db1d722ba74bb346428b1f46451, type: 3}
+  usingSlotImage: {fileID: 21300000, guid: 08945db1d722ba74bb346428b1f46451, type: 3}

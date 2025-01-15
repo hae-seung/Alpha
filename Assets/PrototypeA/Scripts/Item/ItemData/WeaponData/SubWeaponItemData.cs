@@ -22,6 +22,8 @@ public class SubWeaponItemData : WeaponItemData
     [SerializeField] private SubWeaponCategory category;
     [SerializeField] private SubWeaponResourceType needResource;
 
+    public SubWeaponCategory Category => category;
+    public SubWeaponResourceType NeedResource => needResource;
     
     public override WeaponType GetWeaponType()
     {

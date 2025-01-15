@@ -21,7 +21,6 @@ public class SlotHolder : MonoBehaviour
         if (usingSlotCnt == totalSlotCnt)
         {
             Slot newSlot = Instantiate(slotPrefab, rect).GetComponent<Slot>();
-            //슬롯 셋업
             newSlot.SetUp(newItem, this);
             slots.Add(newSlot);
             totalSlotCnt++;
@@ -32,7 +31,6 @@ public class SlotHolder : MonoBehaviour
             {
                 if (!slot.IsUsing)
                 {
-                    //슬롯셋업
                     slot.SetUp(newItem, this);
                     break;
                 }

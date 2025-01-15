@@ -15,7 +15,7 @@ public abstract class Item
    
    public void RemoveItemFromInventory(Item item)//소비아이템 소모시 자동 발생 CountableItem 클래스에서 호출
    {
-      OnInventoryItemRemove?.Invoke(item);
+         OnInventoryItemRemove?.Invoke(item);
    }
 
    public void InvokeEquipOrSwapItem(Item item)

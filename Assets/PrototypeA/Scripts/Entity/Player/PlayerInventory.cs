@@ -9,9 +9,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public InventoryUI inventoryUI;
-    
     private Inventory inventory;
-    
     private Dictionary<int, List<Item>> items;
     private EquippedItem equippedItem;
     
@@ -120,56 +118,148 @@ public class PlayerInventory : MonoBehaviour
     {
         item.OnInventoryItemRemove -= RemoveItem;//리스트에서 제거될때 구독해지
         if (items.TryGetValue(item.Data.Id, out List<Item> itemList))
+        {
             itemList.Remove(item);
+            inventoryUI.RemoveItemAllTabs(item);
+        }
     }
 
     private void EquipOrSwapItem(Item item)
     {
-        // 구독 해제
-        item.OnEquipOrSwapItem -= EquipOrSwapItem;
-        // 인벤토리에서 제거
-        RemoveItem(item);
-        
-        //인벤토리에서 빠져나갔으니 itemUI 파괴(allTab이 있어서 여기서 파괴)
-        inventoryUI.RemoveItemAllTabs(item);
+        // 1. 이벤트 해제 및 인벤토리에서 제거
+        HandleItemRemoval(item);
 
-        var (isEquippedItem, isSwapped) = equippedItem.EquipOrSwapItem(item);
+        if (item is WeaponItem weaponItem) // 무기류
+        {
+            EquipWeaponItem(weaponItem);
+        }
+        else // 방어구나 장신구
+        {
+            EquipNonWeaponItem(item);
+        }
+    }
+
+
+    // **무기 장착 로직**
+    private void EquipWeaponItem(WeaponItem weaponItem)
+    {
+        WeaponType weaponType = weaponItem.GetItemTypeValue();
+
+        if (weaponType == WeaponType.MainWeapon) // 메인 무기
+        {
+            EquipMainWeaponItem((MainWeaponItem)weaponItem);
+        }
+        else // 서브 무기
+        {
+            EquipSubWeaponItem((SubWeaponItem)weaponItem);
+        }
+    }
+
+
+    // **메인 무기 장착 로직**
+    private void EquipMainWeaponItem(MainWeaponItem weaponItem)
+    {
+        WeaponGripType gripType = weaponItem.GetWeaponGripType;
+
+        if (gripType == WeaponGripType.DoubleHand) // 양손 무기
+        {
+            HandleDoubleHandWeapon(weaponItem);
+        }
+        else // 한손 무기
+        {
+            HandleSingleHandWeapon(weaponItem);
+        }
+    }
+
+
+    // **양손 무기 장착 로직**
+    private void HandleDoubleHandWeapon(MainWeaponItem weaponItem)
+    {
+        var (mainWeapon, subWeapon) = equippedItem.EquipDoubleHandWeapon(weaponItem);
+        //메인 서브 슬롯 강제 해제
+        UnsubscribeAndStore(mainWeapon, "MainSlot");
+        UnsubscribeAndStore(subWeapon, "SubSlot");
+
+        inventoryUI.WearItem(weaponItem, "DoubleHandSlot");
+        SubscribeToUnequipEvent(weaponItem);
+    }
+
+    // **한손 무기 장착 로직**
+    private void HandleSingleHandWeapon(MainWeaponItem weaponItem)
+    {
+        if (equippedItem.IsDoubleHand) // 기존에 양손 무기가 장착된 경우
+        {
+            UnEquipItem(equippedItem.GetMainWeapon()); // 양손무기 강제 해제
+        }
+
+        var (previousItem, slotName) = equippedItem.EquipSingleHandWeapon(weaponItem);
+        UnsubscribeAndStore(previousItem, slotName);
+
+        inventoryUI.WearItem(weaponItem, slotName);
+        SubscribeToUnequipEvent(weaponItem);
+    }
+
+    // **서브 무기 장착 로직**
+    private void EquipSubWeaponItem(SubWeaponItem weaponItem)
+    {
+        if (equippedItem.IsDoubleHand) // 기존에 양손 무기가 장착된 경우
+        {
+            UnEquipItem(equippedItem.GetMainWeapon()); // 양손무기 강제 해제
+        }
+        var previousItem = equippedItem.EquipSubWeapon(weaponItem);
+        UnsubscribeAndStore(previousItem, "SubSlot");
+
+        inventoryUI.WearItem(weaponItem, "SubSlot");
+        SubscribeToUnequipEvent(weaponItem);
+    }
+
+    // **방어구 및 장신구 장착 로직**
+    private void EquipNonWeaponItem(Item item)
+    {
+        var (previousItem, isSwapped) = equippedItem.EquipOrSwapItem(item);
+
         if (isSwapped)
         {
-            // 기존 아이템의 이벤트 해제
-            isEquippedItem.OnUnequipItem -= UnEquipItem;
-            // 기존 아이템 인벤토리에 추가
-            AddItem(isEquippedItem);
-            // 새 아이템 장착
-            inventoryUI.WearItem(item);
-            //새아이템에 대한 이벤트 구독
-            item.OnUnequipItem += UnEquipItem;
-        }
-        else
-        {
-            // 새 아이템의 이벤트 구독
-            item.OnUnequipItem += UnEquipItem;
-            // 새 아이템 장착
-            inventoryUI.WearItem(item);
+            UnsubscribeAndStore(previousItem, null);
         }
 
-       
+        inventoryUI.WearItem(item);
+        SubscribeToUnequipEvent(item);
     }
 
-
-    public void UnEquipItem(Item item)
+    // **아이템 제거 처리**
+    private void HandleItemRemoval(Item item)
     {
-        //이벤트가 발생했으니 구독 해제
-        item.OnUnequipItem -= UnEquipItem;
-
-        // 딕셔너리에서 제거
-        equippedItem.RemoveItem(item);
-
-        // 인벤토리에 추가
-        AddItem(item);
-
-        Debug.Log($"Item {item} unequipped and added to inventory.");
+        item.OnEquipOrSwapItem -= EquipOrSwapItem;
+        RemoveItem(item);
     }
+
+    // **이벤트 구독 해제 및 인벤토리에 추가**
+    private void UnsubscribeAndStore(Item item, string slotName)
+    {
+        if (item != null)
+        {
+            item.OnUnequipItem -= UnEquipItem;
+            inventoryUI.UnWearItem(item, slotName);
+            AddItem(item);
+        }
+    }
+
+    // **이벤트 구독**
+    private void SubscribeToUnequipEvent(Item item)
+    {
+        item.OnUnequipItem += UnEquipItem;
+    }
+
+    // **아이템 해제 로직**
+    private void UnEquipItem(Item item)
+    {
+        item.OnUnequipItem -= UnEquipItem;
+        string slotName = equippedItem.RemoveItem(item);
+        inventoryUI.UnWearItem(item, slotName);
+        AddItem(item);
+    }
+
 
    
     public void GetInventoryFromManager()

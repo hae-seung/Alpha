@@ -7,11 +7,10 @@ using UnityEngine;
 public class EquipSlotHolder : MonoBehaviour
 {
     public List<EquipSlot> slots;
-        
     
-    public void WearItem(Item item) 
+    public void WearItem(Item item, string weaponSlot = null) 
     {
-        if (item is IEquippable eitem)
+        if (item is IEquippable eitem && weaponSlot == null)
         {
             foreach (var slot in slots)
             {
@@ -22,10 +21,46 @@ public class EquipSlotHolder : MonoBehaviour
                 }
             }
         }
-        else
+        else if(weaponSlot != null)
         {
-            Debug.Log("아이템을 장착할 수 없습니다");
-            return;
+            foreach (var slot in slots)
+            {
+                if (slot.gameObject.name.Equals(weaponSlot))
+                {
+                    slot.SetUpUI(item);
+                    break;
+                }
+            }
         }
     }
+
+    public void UnWearItem(Item item, string weaponSlot = null)
+    {
+        if (item is IEquippable eitem && weaponSlot == null)
+        {
+            foreach (var slot in slots)
+            {
+                if (slot.GetSlotType().Equals(eitem.GetItemType()) && slot.IsUsing)
+                {
+                    slot.EndSlotUsage();
+                    break;
+                }
+            }
+        }
+        else if(weaponSlot != null)
+        {
+            foreach (var slot in slots)
+            {
+                if (slot.gameObject.name.Equals(weaponSlot))
+                {
+                    slot.EndSlotUsage();
+                    break;
+                }
+            }
+        }
+    }
+    
+    
+    
+    
 }

@@ -10,10 +10,13 @@ public abstract class WeaponItem : EquipItem<WeaponType>
     public WeaponItem(WeaponItemData data) : base(data)
     {
         weaponItemData = data;
+        type = data.GetWeaponType();
     }
     
     public override WeaponType GetItemTypeValue()
     {
         return type;
     }
+    
+    
 }

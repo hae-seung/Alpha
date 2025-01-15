@@ -26,7 +26,7 @@ public class MainWeaponItemData : WeaponItemData
     [SerializeField] private MainWeaponCategory category;
     [SerializeField] private WeaponGripType gripType;
     [SerializeField] private bool needSubWeapon = false; // 한손 무기 시 사용 여부
-    [SerializeField] private SubWeaponCategory subWeaponType; // 보조무기 Enum
+    [SerializeField] private SubWeaponCategory subWeaponType; // 보조무기 필요 시 보조무기 Enum
 
     public MainWeaponCategory GetMainWeaponCategory => category;
     public WeaponGripType GetWeaponGripType => gripType;

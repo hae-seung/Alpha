@@ -53,12 +53,6 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         itemCountTxt.text = "";
     }
 
-    public void UpdateItemUI(Item newItem)
-    {
-        item = newItem;
-        itemImage.sprite = item.Data.IconImage;
-    }
-
     private void UpdateCountText(int amount)
     {
         itemCountTxt.text = amount.ToString();
@@ -109,22 +103,18 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         {
             int amount = useableItem.Use();
             if (amount <= 0)
-            {
-                item.RemoveItemFromInventory(item); //인벤토리 딕셔너리에서 아이템 제거
-                Destroy(gameObject);
-            }
+                item.RemoveItemFromInventory(item); //인벤토리 딕셔너리에서 아이템, UI 제거
             else
                 UpdateCountText(amount);//text 수정(감소)
         }
         else if (item is IEquippable equipItem)
         {
             if (!isEquipped)
-                equipItem.EquipOrSwapItem(item);
+                equipItem.EquipOrSwapItem(item);//딕셔너리 제거 + UI 제거
             else
             {
                 isEquipped = false;
                 equipItem.UnEquipItem(item);
-                parentEquipSlot.EndSlotUsage();
             }
         }
     }

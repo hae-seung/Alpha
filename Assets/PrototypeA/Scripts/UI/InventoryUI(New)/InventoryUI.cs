@@ -20,16 +20,22 @@ public class InventoryUI : MonoBehaviour
     {
         itemManagerDirector.CreateNewItem(newItem);
     }
-
-    public void WearItem(Item item)
-    {
-        equipItemPanel.WearItem(item);
-    }
-
-    public void RemoveItemAllTabs(Item item)
+    
+    public void RemoveItemAllTabs(Item item)//인벤토리에서 제거
     {
         itemManagerDirector.RemoveItemAllTabs(item);
     }
+
+    public void WearItem(Item item, string weaponSlot = null)//장착 UI에 생성
+    {
+        equipItemPanel.WearItem(item, weaponSlot);
+    }
+
+    public void UnWearItem(Item item, string weaponSlot = null)//장착UI에서 제거
+    {
+        equipItemPanel.UnWearItem(item, weaponSlot);
+    }
+    
     
     
     public void ActiveInventory()

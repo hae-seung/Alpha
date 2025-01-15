@@ -22,7 +22,7 @@ public class ItemManagerDirector : MonoBehaviour
                 accItemManager.CreateItem(accItem);
                 break;
             case WeaponItem weaponItem:
-                weaponItemManager.CreateItem();
+                weaponItemManager.CreateItem(weaponItem);
                 break;
             case IConsumable consumable:
                 consumeItemManager.CreateItem(consumable);
@@ -44,10 +44,14 @@ public class ItemManagerDirector : MonoBehaviour
                 accItemManager.RemoveItem(accItem);
                 break;
             case WeaponItem weaponItem:
-                weaponItemManager.RemoveItem();
+                weaponItemManager.RemoveItem(weaponItem);
                 break;
-            
-            //Consume이랑 Mission은 AllTab이 없어서 구현 불필요
+            case IConsumable consumable:
+                consumeItemManager.RemoveItem(consumable);
+                break;
+            case MissionItem missionItem:
+                missionItemManager.RemoveItem(missionItem);
+                break;
         }
     }
     

@@ -7,9 +7,6 @@ public class ArmorSlot : EquipSlot
 {
    public ArmorType armorType;
    
-   
-   
-   
    public override Enum GetSlotType()
    {
       return armorType;

@@ -15,21 +15,28 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     
     public GameObject itemUIPrefab;
     public Sprite emptySlotImage;
-    public Sprite selectSlotImage;
+    public Sprite usingSlotImage;
     public bool IsUsing { get; private set; } = false;
 
     public void SetUp(Item newItem, SlotHolder slotHolder)
     {
-        rect = GetComponent<RectTransform>();
-        image = GetComponent<Image>();
+        if (itemUI != null)//이미 한 번 사용된 적 있었다면
+        {
+            itemUI.gameObject.SetActive(true);
+        }
+        else//아예 새삥
+        {
+            rect = GetComponent<RectTransform>();
+            image = GetComponent<Image>();
         
-        parentSlotHolder = slotHolder;
-        IsUsing = true;
+            parentSlotHolder = slotHolder;
         
-        itemUI = Instantiate(itemUIPrefab, rect).GetComponent<ItemUI>();
+            itemUI = Instantiate(itemUIPrefab, rect).GetComponent<ItemUI>();
+        }
+        
         itemUI.SetUp(newItem, this);
-
-        image.sprite = selectSlotImage;
+        IsUsing = true;
+        image.sprite = usingSlotImage;
     }
     
     public void OnPointerEnter(PointerEventData eventData)
@@ -52,11 +59,8 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void EndSlotUsage()
     {
         if (itemUI != null)
-        {
-            Destroy(itemUI.gameObject);
-            itemUI = null;
-        }
-
+            itemUI.gameObject.SetActive(false);
+        
         IsUsing = false;
         image.color = Color.white;
         image.sprite = emptySlotImage;

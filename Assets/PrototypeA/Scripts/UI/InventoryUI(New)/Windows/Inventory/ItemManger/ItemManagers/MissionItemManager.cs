@@ -9,4 +9,9 @@ public class MissionItemManager : MonoBehaviour
     {
         allItems.CreateNewItem(item);
     }
+
+    public void RemoveItem(Item item)
+    {
+        allItems.RemoveItem(item);
+    }
 }

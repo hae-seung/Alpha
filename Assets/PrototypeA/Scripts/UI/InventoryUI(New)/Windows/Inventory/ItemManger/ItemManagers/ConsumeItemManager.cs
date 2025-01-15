@@ -16,4 +16,10 @@ public class ConsumeItemManager : MonoBehaviour
       ConsumeType type = item.GetConsumeType();
       datas[type].CreateNewItem(item.GetItem());
    }
+
+   public void RemoveItem(IConsumable item)
+   {
+      ConsumeType type = item.GetConsumeType();
+      datas[type].RemoveItem(item.GetItem());
+   }
 }

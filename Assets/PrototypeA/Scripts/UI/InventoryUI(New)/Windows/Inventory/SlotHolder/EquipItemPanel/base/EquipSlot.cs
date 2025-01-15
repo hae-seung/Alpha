@@ -16,29 +16,27 @@ public abstract class EquipSlot : MonoBehaviour, IPointerEnterHandler, IPointerE
     
     public void SetUpUI(Item item)
     {
-        if(!IsUsing)
+        if(itemUI == null)
         {
-            IsUsing = true;
             itemUI = Instantiate(itemUIPrefab, rect).GetComponent<ItemUI>();
-            itemUI.SetUp(item, this);
         }
-        else
+        else//스왑이 된 경우 UI 재활용
         {
-            itemUI.UpdateItemUI(item);
+            itemUI.gameObject.SetActive(true);
         }
+        IsUsing = true;
+        itemUI.SetUp(item, this);
     }
 
     public void EndSlotUsage()
     {
         if (itemUI != null)
         {
-            Destroy(itemUI.gameObject);
-            itemUI = null;
+            itemUI.gameObject.SetActive(false);
+            Debug.Log("UI끔");
         }
         
         IsUsing = false;
-        itemUI = null;
-        
     }
     
     public void OnPointerEnter(PointerEventData eventData)
