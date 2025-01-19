@@ -1,42 +1,71 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private InventoryUI inventoryUI;
+    [SerializeField] private UIManager uiManager;
+
     public Vector2 MoveDirection { get; private set; }
-    private bool isMovable = false;
-    
+    private bool isMovable = true;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            isMovable = false;
-            inventoryUI.ActiveInventory();
-        }
+        HandleUIInput();
         
         if (isMovable)
         {
-            float horizontal = Input.GetAxisRaw("Horizontal");
-            float vertical = Input.GetAxisRaw("Vertical");
+            HandleMovementInput();
+        }
+    }
 
-            if (Mathf.Abs(horizontal) > Mathf.Abs(vertical))
+    // UI 입력 처리 (ESC 및 인벤토리 키)
+    private void HandleUIInput()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            uiManager.ToggleInventory();
+            SetMovable(!uiManager.IsInventoryOpen());
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (uiManager.IsInventoryOpen())
             {
-                vertical = 0;
+                uiManager.CloseInventory();
+                SetMovable(true);
+            }
+            else if (uiManager.IsSettingsOpen())
+            {
+                uiManager.CloseSettings();
+                SetMovable(true);
             }
             else
             {
-                horizontal = 0;
+                uiManager.ToggleSettings();
+                SetMovable(!uiManager.IsSettingsOpen());
             }
 
-            Vector2 direction = new Vector2(horizontal, vertical).normalized;
+            return;
+        }
+    }
 
-            if (direction != Vector2.zero)
-            {
-                MoveDirection = direction;
-                isMovable = false; // 입력을 막음
-            }
+    private void HandleMovementInput()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        // 상하/좌우 하나의 방향만 입력 허용
+        if (Mathf.Abs(horizontal) > Mathf.Abs(vertical))
+            vertical = 0;
+        else
+            horizontal = 0;
+
+        Vector2 direction = new Vector2(horizontal, vertical).normalized;
+
+        if (direction != Vector2.zero)
+        {
+            MoveDirection = direction;
+            isMovable = false; // 입력을 막음
         }
     }
 
@@ -45,7 +74,7 @@ public class PlayerInput : MonoBehaviour
         isMovable = state;
     }
 
-    public void ResetMoveDriection()
+    public void ResetMoveDirection()
     {
         MoveDirection = Vector2.zero; // 입력 방향 초기화
     }

@@ -7,28 +7,28 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[Serializable]
-public class ButtonImage
-{
-    public Sprite[] images = new Sprite[2];
-    //0번 : 기본 이미지 1번 : 선택 이미지
-}
 
 public class Btns : MonoBehaviour
 {
     [Header("초기화")] 
-    public Image[] btns;
+    public TextMeshProUGUI curSelectBtn;
+    public Image curSelectImage;
     public GameObject curOpenPanel;
 
-    [Header("다른 버튼 클릭시 변경되는 이미지")] 
-    public List<ButtonImage> images;
+    [Header("클릭시 변경되는 꼬다리 이미지")] 
+    public Sprite normalImage;
+    public Sprite selectImage;
+    
+    [Header("버튼 클리시 바뀌는 색상과 텍스트 사이즈")] 
+    public Color32 normalColor;
+    public Color32 selectColor;
+    public int normalFontSize;
+    public int selectFontSize;
 
     [Header("모든 판넬들")] 
     [Tooltip("curOpenPanel을 제외한 다른 판넬들을 끄기 위함")]
     public GameObject[] panels;
     
-    private Image curSelectBtn;
-    private Sprite normalSprite;
     
     
     private void Awake()
@@ -36,26 +36,34 @@ public class Btns : MonoBehaviour
         InitSetting();
     }
 
-    public void OnClickBtn(int index)
+    public void OnSelectBtn(TextMeshProUGUI btn)
     {
-        curSelectBtn.sprite = normalSprite;
-        curSelectBtn = btns[index];
-
-        curSelectBtn.sprite = images[index].images[1];
-        normalSprite = images[index].images[0];
-    }
-
-    public void OnClickBtn2(GameObject goalPanel)
-    {
-        OpenPanel(goalPanel);
+        if (curSelectBtn == btn)
+            return;
+        SetBtn(btn);
     }
     
+
+    public void OnOpenPanel(GameObject goalPanel)
+    {
+        if (curOpenPanel == goalPanel)
+            return;
+        OpenPanel(goalPanel);
+    }
+
+    public void OnChangeImage(Image image)
+    {
+        if (curSelectImage == image)
+            return;
+        SetImage(image);
+    }
+    
+
     private void InitSetting()
     {
-        curSelectBtn = btns[0];
-        curSelectBtn.sprite = images[0].images[1];
-        normalSprite = images[0].images[0];
-
+        SetBtn(curSelectBtn);
+        SetImage(curSelectImage);
+        
         foreach (GameObject panel in panels)
         {
             if(panel == curOpenPanel)
@@ -71,6 +79,24 @@ public class Btns : MonoBehaviour
         panel.SetActive(true);
         curOpenPanel = panel;
     }
+    
+    private void SetBtn(TextMeshProUGUI btn)
+    {
+        curSelectBtn.color = normalColor;
+        curSelectBtn.fontSize = normalFontSize;
 
+        curSelectBtn = btn;
+        
+        curSelectBtn.color = selectColor;
+        curSelectBtn.fontSize = selectFontSize;
+    }
+
+    
+    private void SetImage(Image image)
+    {
+        curSelectImage.sprite = normalImage;
+        curSelectImage = image;
+        curSelectImage.sprite = selectImage;
+    }
     
 }

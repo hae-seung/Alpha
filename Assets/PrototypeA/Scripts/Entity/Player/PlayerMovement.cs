@@ -52,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
         HasMoved = true;
 
         // 플레이어 입력 초기화
-        playerInput.ResetMoveDriection();
+        playerInput.ResetMoveDirection();
     }
+    
+    
 }

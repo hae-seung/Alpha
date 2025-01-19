@@ -1,7 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+
+#if UNITY_EDITOR
+    using UnityEditor;
+#endif
+
 using UnityEngine;
 
 public enum MainWeaponCategory
@@ -39,10 +41,8 @@ public class MainWeaponItemData : WeaponItemData
     }
 }
 
-
-
-
-
+// Editor 관련 코드는 Unity Editor 환경에서만 컴파일
+#if UNITY_EDITOR
 [CustomEditor(typeof(MainWeaponItemData))]
 public class MainWeaponItemDataEditor : Editor
 {
@@ -102,6 +102,4 @@ public class MainWeaponItemDataEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 }
-
-
-
+#endif
