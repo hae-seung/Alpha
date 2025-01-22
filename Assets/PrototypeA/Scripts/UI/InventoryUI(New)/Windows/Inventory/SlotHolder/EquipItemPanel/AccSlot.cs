@@ -7,8 +7,6 @@ public class AccSlot : EquipSlot
 {
     public AccType accType;
     
-    
-    
     public override Enum GetSlotType()
     {
         return accType;

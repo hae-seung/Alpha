@@ -1,68 +1,64 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Slot : MonoBehaviour
 {
-    private RectTransform rect;
-    private Image image;
-    private ItemUI itemUI;
-    private SlotHolder parentSlotHolder;
+    [SerializeField] private Image slotImage;
+    [SerializeField] private Image itemImage;
+    [SerializeField] private TextMeshProUGUI amountText;
+    [SerializeField] private Sprite emptySlotImage;
+    [SerializeField] private Sprite fillSlotImage;
+    private Item item = null;
     
-    public GameObject itemUIPrefab;
-    public Sprite emptySlotImage;
-    public Sprite usingSlotImage;
-    public bool IsUsing { get; private set; } = false;
-
-    public void SetUp(Item newItem, SlotHolder slotHolder)
-    {
-        if (itemUI != null)//이미 한 번 사용된 적 있었다면
-        {
-            itemUI.gameObject.SetActive(true);
-        }
-        else//아예 새삥
-        {
-            rect = GetComponent<RectTransform>();
-            image = GetComponent<Image>();
-        
-            parentSlotHolder = slotHolder;
-        
-            itemUI = Instantiate(itemUIPrefab, rect).GetComponent<ItemUI>();
-        }
-        
-        itemUI.SetUp(newItem, this);
-        IsUsing = true;
-        image.sprite = usingSlotImage;
-    }
     
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (IsUsing)
-            image.color = Color.red;
-    }
+    public bool IsUsing => item != null;
+    
+    private void ShowItem() => itemImage.gameObject.SetActive(true);
+    private void ShowText() => amountText.gameObject.SetActive(true);
 
-    public void OnPointerExit(PointerEventData eventData)
+    private void HideItem() => itemImage.gameObject.SetActive(false);
+    private void HideText() => amountText.gameObject.SetActive(false);
+
+
+    public void SetUp(Item newItem)
     {
-        if (IsUsing)
-            image.color = Color.white;
+        item = newItem;
+        itemImage.sprite = item.Data.IconImage;
+        slotImage.sprite = fillSlotImage;
+        ShowItem();
+
+        if (item is CountableItem citem)
+        {
+            amountText.text = citem.Amount.ToString();
+            ShowText();
+        }
     }
 
     public Item GetItem()
     {
-        return itemUI.GetItem();
+        return item;
     }
-    
+
     public void EndSlotUsage()
     {
-        if (itemUI != null)
-            itemUI.gameObject.SetActive(false);
-        
-        IsUsing = false;
-        image.color = Color.white;
-        image.sprite = emptySlotImage;
-        parentSlotHolder.FreeSlot();
+        item = null;
+        slotImage.sprite = emptySlotImage;
+        HideItem();
+        HideText();
+    }
+    
+    public void Highlight(bool enable)
+    {
+        slotImage.color = enable ? Color.red : Color.white;
+    }
+    
+    public void UpdateCountText(int amount)
+    {
+        amountText.text = amount.ToString();
     }
 }

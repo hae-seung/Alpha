@@ -6,10 +6,9 @@ using UnityEngine;
 public class EquipItemPanel : MonoBehaviour
 {
     public InventoryUI inventoryUI;
-    public EquipSlotHolder armorHolder;
-    public EquipSlotHolder accHolder;
-    public EquipSlotHolder weaponHolder;
-    //todo: 무기 추가
+    public ArmorAccSlotHolder armorHolder;
+    public ArmorAccSlotHolder accHolder;
+    public WeaponSlotHolder weaponHolder;
 
     public void WearItem(Item item, string weaponSlot)
     {

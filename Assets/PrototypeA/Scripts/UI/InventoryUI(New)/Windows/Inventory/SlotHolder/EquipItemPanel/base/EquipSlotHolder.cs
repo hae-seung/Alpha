@@ -1,29 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SlotHolder : MonoBehaviour
+public abstract class EquipSlotHolder : MonoBehaviour
 {
-    public List<Slot> slots = new List<Slot>();
-    public GameObject slotPrefab;
-    public RectTransform rect;
-    
-    private int usingSlotCnt = 0;
-    private int totalSlotCnt = 0;
-
-    
     private GraphicRaycaster _gr;
     private PointerEventData _ped;
     private List<RaycastResult> _rrList;
 
-    private Slot _raySlot;
-    private Slot _currentSlot;  // 현재 마우스가 올라간 슬롯 추적
+    private EquipSlot _raySlot;
+    private EquipSlot _currentSlot;  // 현재 마우스가 올라간 슬롯 추적
     
     private float lastClickTime = 0f;
     private float doubleClickThreshold = 0.3f;  // 더블클릭 간격
+    
+    
+    public abstract void WearItem(Item item, string weaponSlot = null);
+    public abstract void UnWearItem(Item item, string weaponSlot = null); //마우스 우클릭으로 해제될때
     
     private void Start()
     {
@@ -67,26 +63,26 @@ public class SlotHolder : MonoBehaviour
     private void HandleRightClick()
     {
         Debug.Log("우클릭!");
-        _raySlot = RaycastAndGetFirstComponent<Slot>();
+        _raySlot = RaycastAndGetFirstComponent<EquipSlot>();
 
-        if (_raySlot != null && _raySlot.IsUsing)
+        if (_raySlot != null)
         {
             Debug.Log("있다!");
-            EquipOrUseItem(_raySlot);
+            UnEquipItem(_raySlot);
         }
         
     }
 
     private void HandleDoubleClick()
     {
-        _raySlot = RaycastAndGetFirstComponent<Slot>();
+        _raySlot = RaycastAndGetFirstComponent<EquipSlot>();
 
-        if (_raySlot != null && _raySlot.IsUsing)
+        if (_raySlot != null)
         {
             float timeSinceLastClick = Time.time - lastClickTime;
             if (timeSinceLastClick <= doubleClickThreshold)
             {
-                EquipOrUseItem(_raySlot); // 더블클릭 시 아이템 사용/장착
+                UnEquipItem(_raySlot); // 더블클릭 시 아이템 사용/장착
             }
 
             lastClickTime = Time.time; // 클릭 시간 업데이트
@@ -95,7 +91,7 @@ public class SlotHolder : MonoBehaviour
 
     private void HandlePointerEnterExit()
     {
-        _raySlot = RaycastAndGetFirstComponent<Slot>();
+        _raySlot = RaycastAndGetFirstComponent<EquipSlot>();
 
         if (_raySlot != _currentSlot)
         {
@@ -114,75 +110,23 @@ public class SlotHolder : MonoBehaviour
             _currentSlot = _raySlot;  // 현재 슬롯 업데이트
         }
     }
-    
-    
-
-    public void CreateNewItem(Item newItem)
-    {
-        if (totalSlotCnt == 0)
-            totalSlotCnt = slots.Count;
-
-        if (usingSlotCnt == totalSlotCnt)
-        {
-            Slot newSlot = Instantiate(slotPrefab, rect).GetComponent<Slot>();
-            newSlot.SetUp(newItem);
-            slots.Add(newSlot);
-            totalSlotCnt++;
-        }
-        else
-        {
-            foreach (Slot slot in slots)
-            {
-                if (!slot.IsUsing)
-                {
-                    slot.SetUp(newItem);
-                    break;
-                }
-            }
-        }
-        
-        usingSlotCnt++;
-    }
-
-    public void RemoveItem(Item item)
-    {
-        foreach (var slot in slots)
-        {
-            if (slot.IsUsing && slot.GetItem().Equals(item))
-            {
-                EndSlotUsage(slot);
-                break;
-            }
-        }
-    }
-
-    private void EndSlotUsage(Slot slot)
+    protected void EndSlotUsage(EquipSlot slot)
     {
         slot.EndSlotUsage();
-        usingSlotCnt--;
     }
     
-    private void EquipOrUseItem(Slot slot)
+    private void UnEquipItem(EquipSlot slot)
     {
         Item item = slot.GetItem();
         
         if (item == null)
-        {
-            Debug.LogError("Item is null in ItemUI.EquipOrUseItem.");
             return;
-        }
 
-        if (item is IUseable useableItem)//포션 아이템만 걸러짐
+        if (item is IEquippable equipItem)
         {
-            int amount = useableItem.Use();
-            if (amount <= 0)
-                item.RemoveItemFromInventory(item); //인벤토리 딕셔너리에서 아이템, UI 제거
-            else
-                slot.UpdateCountText(amount);//text 수정(감소)
-        }
-        else if (item is IEquippable equipItem)
-        {
-            equipItem.EquipOrSwapItem(item);//딕셔너리 제거 + UI 제거
+            equipItem.UnEquipItem(item);//딕셔너리 제거 + UI 제거
         }
     }
+    
 }
+

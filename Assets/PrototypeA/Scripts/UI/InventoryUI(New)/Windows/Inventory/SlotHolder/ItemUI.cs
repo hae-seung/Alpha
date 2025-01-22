@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class ItemUI : MonoBehaviour
 {
     private TextMeshProUGUI itemCountTxt;
     private Image itemImage;
@@ -64,16 +64,7 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         return item;
     }
     
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log("아이템UI에 포인터 온!");
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("아이템UI에 포인터 아웃!");
-    }
-
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Right)
