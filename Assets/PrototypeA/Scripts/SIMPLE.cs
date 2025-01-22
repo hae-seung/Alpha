@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
-public class SIMPLE : MonoBehaviour, IPointerEnterHandler
+public class SIMPLE : MonoBehaviour
 {
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnClickContinue()
     {
-        Debug.Log(gameObject.name + " enter!");
+        SceneManager.LoadScene("FieldScene");
     }
 }

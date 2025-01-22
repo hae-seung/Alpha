@@ -6,21 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="380c0b5c-761d-4c1a-a634-83f52016d670" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/2DLight/URP_2DLight.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/2DLight/URP_2DLight.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/PlayerInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/PlayerInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/PlayerInventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemData/WeaponData/MainWeaponItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemData/WeaponData/MainWeaponItemData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/Singleton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/Singleton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/InventoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/InventoryUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/Button/Btns.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/Button/Btns.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/Button/TopBtns.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/Button/TopBtns.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/Slot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/Slot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/SIMPLE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/SIMPLE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/ESC/EscUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/ESC/EscUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,6 +201,7 @@
       <workItem from="1737276602206" duration="8250000" />
       <workItem from="1737294691773" duration="4854000" />
       <workItem from="1737303163660" duration="4094000" />
+      <workItem from="1737307456722" duration="803000" />
     </task>
     <servers />
   </component>
