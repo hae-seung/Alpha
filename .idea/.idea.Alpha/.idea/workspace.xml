@@ -6,23 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="380c0b5c-761d-4c1a-a634-83f52016d670" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/ItemUI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/ItemUI.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/EquipSlot/AccSlot/AccSlot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/EquipSlot/AccSlot/AccSlot Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/EquipSlot/base/AccSlot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/EquipSlot/base/AccSlot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/EquipSlot/base/ArmorSlot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/EquipSlot/base/ArmorSlot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/EquipSlot/base/WeaponSlot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/EquipSlot/base/WeaponSlot.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/Slot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/Slot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/SlotHolder/base/SlotHolder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/SlotHolder/base/SlotHolder.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/ItemManger/ItemManagers/EquipmentPanel/EquipItemPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/ItemManger/ItemManagers/EquipmentPanel/EquipItemPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipItemPanel/AccSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipItemPanel/AccSlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipItemPanel/EquipSlotHolder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipItemPanel/EquipSlotHolder.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipItemPanel/base/EquipSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipItemPanel/base/EquipSlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/ItemUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/ItemUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/Slot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/Slot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/SlotHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/SlotHolder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Texture/MinimapTexture.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Texture/MinimapTexture.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scenes/PrototypeB_Combat.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scenes/PrototypeB_Combat.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/2. CharacterSetting/CharacterSetting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/2. CharacterSetting/CharacterSetting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/BattleSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/BattleSetup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/2. BattleModerator/BattleModerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/2. BattleModerator/BattleModerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/Data/GameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/Data/GameData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Map.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Map.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainVillage.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainVillage.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,6 +226,7 @@
       <workItem from="1737307456722" duration="803000" />
       <workItem from="1737523023231" duration="20177000" />
       <workItem from="1737558674271" duration="30000" />
+      <workItem from="1737990469058" duration="312000" />
     </task>
     <servers />
   </component>

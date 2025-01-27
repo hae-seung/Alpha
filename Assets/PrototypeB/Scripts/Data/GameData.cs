@@ -5,7 +5,7 @@ using UnityEngine.XR;
 
 public class GameData : MonoBehaviour
 {
-    //ì¸ê³„í•  ë°ì´í„° -> ìºë¦­í„°(ìŠ¤í…Ÿ, ìŠ¤í‚¬, ì¥ë¹„, ì¸ë²¤í† ë¦¬), ì  ìºë¦­í„°(ì¢…ë¥˜, ë ˆë²¨), ë°°ê²½, ì´ë²¤íŠ¸
+    //ÀÎ°èÇÒ µ¥ÀÌÅÍ -> Ä³¸¯ÅÍ(½ºÅİ, ½ºÅ³, Àåºñ, ÀÎº¥Åä¸®), Àû Ä³¸¯ÅÍ(Á¾·ù, ·¹º§), ¹è°æ, ÀÌº¥Æ®
     public PlayerStat playerStat;
     public PlayerEquipment equipment;
     //public PlayerInventory inventory;
@@ -31,24 +31,10 @@ public class GameData : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        GetEnemyIdFromPlayerManager();
-    }
-
-    private void GetEnemyIdFromPlayerManager()
-    {
-        if (enemy_ID != null)
-        {
-            enemy_ID.Clear();
-            enemy_ID = PlayerManager.Instance.GetMonsterData();
-        }
-        else
-            enemy_ID = new List<string>(PlayerManager.Instance.GetMonsterData());
     }
 }
 
-
-
-public class CharacterSkill // ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸
+public class CharacterSkill // ½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ®
 {
     public int STP;
 }

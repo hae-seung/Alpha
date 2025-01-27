@@ -14,7 +14,7 @@ public class BattleSetup : MonoBehaviour
 
     void Start()
     {
-        receivedData = GameObject.Find("GameData").GetComponent<GameData>();
+        receivedData=GameObject.Find("GameData").GetComponent<GameData>();
         gameObject.GetComponentInParent<Battle_Manager>().Initialize(this);
     }
 
@@ -71,6 +71,4 @@ public class BattleSetup : MonoBehaviour
     {
         //BlackScreen.SetActive(false);
     }
-    
-    
 }

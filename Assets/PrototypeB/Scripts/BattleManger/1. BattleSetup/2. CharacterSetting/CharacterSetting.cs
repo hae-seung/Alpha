@@ -27,7 +27,8 @@ public class CharacterSetting : MonoBehaviour
 
         if (playerPrefab != null)
         {
-            GameObject newPlayer =Instantiate(playerPrefab, gameData.playerStartPoint.position, Quaternion.identity);
+            //GameObject newPlayer =Instantiate(playerPrefab, gameData.playerStartPoint.position, Quaternion.identity);
+            GameObject newPlayer =Instantiate(playerPrefab, gameData.playerStartPoint.position, gameData.playerStartPoint.rotation);
 
             gameData.player = newPlayer;
 
