@@ -23,18 +23,18 @@ public class BattleModerator : MonoBehaviour
         _TurnPreview=GameObject.Find("TurnOrder").GetComponent<TurnPreview>();
     }
 
-    public void Initialize()                                                    // ÇÔ¼ö È£Ãâ½Ã ¼¼ÆÃµÈ ½ÃÀÛ ÅÏ¿¡ ¸ÂÃç ¼ø¼­¸¦ Á¤ÇÔ.
-    {                                                                           // ÀÌÈÄ ÄÚ·çÆ¾À¸·Î ÅÏ ÁøÇà
+    public void Initialize()                                                                    // ì„¸íŒ… ì¤€ë¹„.
+    {                                                                                           // ì´í›„ ì½”ë£¨í‹´ìœ¼ë¡œ í„´ ì§„í–‰
         for (int i = 0; i < receivedData.StartTurn.Count; i++)
         {
-            SetTurn(receivedData.StartTurn[i].GetComponent<Entity>());
+            SetTurn(receivedData.StartTurn[i].GetComponent<Entity>());                          // CalculateStartTurnìœ¼ë¡œ ì •í•´ì§„ í„´ ì‹œì‘ ìˆœì„œì— ë§ì¶° í„´ ë¶„ë°°
         }
 
-        _TurnPreview.GetComponent<TurnPreview>().UpdatePreviewUI(PQ.PeekTopN(6));
-        StartCoroutine(BattleTurnModerator());
+        _TurnPreview.GetComponent<TurnPreview>().UpdatePreviewUI(PQ.PeekTopN(6));               // í„´ í”„ë¦¬ë·° ì°½ì— ìˆœì„œ ë„ì›€.
+        StartCoroutine(BattleTurnModerator());                                                  // ë°°í‹€ ëª¨ë”ë ˆì´í„° ë™ì‘.
     }
 
-    private IEnumerator BattleTurnModerator()                                   // 0.4ÃÊ¸¶´Ù ´ÙÀ½ ÅÏ¿¡ ÇØ´çÇÏ´Â Ä³¸¯ÅÍ¿¡°Ô ÅÏ ºÎ¿©
+    private IEnumerator BattleTurnModerator()                                                   // 0.4ì´ˆë§ˆë‹¤ ë‹¤ìŒ í„´ì— í•´ë‹¹í•˜ëŠ” ìºë¦­í„°ì—ê²Œ í„´ ë¶€ì—¬
     {
         while (true)
         {
@@ -47,7 +47,7 @@ public class BattleModerator : MonoBehaviour
         PQ.Enqueue(entity);
     }
 
-    public IEnumerator GetTurn()                                                       //½ºÅ³ ½ÃÀü ÈÄ ´ÙÀ½ ½ºÅ³ ¿¹¾à
+    public IEnumerator GetTurn()                                                       //ìŠ¤í‚¬ ì‹œì „ í›„ ë‹¤ìŒ ìŠ¤í‚¬ ì˜ˆì•½
     {
         Entity activedEntity= PQ.Dequeue();
         TP_Counter = activedEntity.TPCount;
@@ -68,14 +68,14 @@ public class BattleModerator : MonoBehaviour
         else
         {
             activedEntity.TPCount = activedEntity.nextSkill.TP + TP_Counter;
-            Debug.Log("ÇöÀç TP : " + TP_Counter);
-            //Debug.Log("´ÙÀ½ °ø°İÀÇ TP´Â : " + activedEntity.TPCount);
+            Debug.Log("í˜„ì¬ TP : " + TP_Counter);
+            //Debug.Log("ë‹¤ìŒ ê³µê²©ì˜ TPëŠ” : " + activedEntity.TPCount);
 
-            PQ.Enqueue(activedEntity);                                              // À§ÀÇ ÄÚ·çÆ¾ Á¾·á½Ã ¿ì¼±¼øÀ§ Å¥¿¡ ´ÙÀ½ Çàµ¿ »ğÀÔ
+            PQ.Enqueue(activedEntity);                                              // ìœ„ì˜ ì½”ë£¨í‹´ ì¢…ë£Œì‹œ ìš°ì„ ìˆœìœ„ íì— ë‹¤ìŒ í–‰ë™ ì‚½ì…
         }
 
         _TurnPreview.GetComponent<TurnPreview>().UpdatePreviewUI(PQ.PeekTopN(6));
-        //Debug.Log("ÇÁ¶óÀÌ¾îÆ¼ Å¥ÀÇ peek °ª : " + PQ.Peek().TPCount);
+        //Debug.Log("í”„ë¼ì´ì–´í‹° íì˜ peek ê°’ : " + PQ.Peek().TPCount);
     }
 
     public IEnumerator ActiveSkillAndSetNext(Entity entity)
