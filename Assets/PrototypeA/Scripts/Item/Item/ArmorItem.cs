@@ -1,8 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ArmorItem : EquipItem
+public class ArmorItem : EquipItem<ArmorType>
 {
-   public ArmorItem(ArmorItemData data) : base(data) { }
+    private ArmorItemData data;
+    private ArmorType type;
+
+    public ArmorItem(ArmorItemData data) : base(data)
+    {
+        this.data = data;
+        type = data.GetArmorType();
+    }
+
+    public override ArmorType GetItemTypeValue()
+    {
+        return type;
+    }
 }

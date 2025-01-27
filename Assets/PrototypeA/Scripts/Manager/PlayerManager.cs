@@ -8,29 +8,27 @@ public class PlayerManager : Singleton<PlayerManager>
     public StatusData playerStatusData;
     public GameObject battlePlayerPrefab;
    
-   
-    private List<MonsterData> battlelMonsterDatas = new List<MonsterData>();//배틀 진입하는 몬스터
+    private List<string> battlelMonsterDatas = new List<string>();//배틀 진입하는 몬스터
     public Inventory inventory;
     
-
     protected override void Awake()
     {
         base.Awake();
         inventory = new Inventory();
     }
     
-   
-    public bool AddSkill(Skill newSkill)
+
+    public void SetBattleMonsterData(Monster2D monster)
     {
-        
-        return true;
+        battlelMonsterDatas.Add(monster.MonsterName);
     }
 
-    public void SetBattleMonsterData(MonsterData data)
+    public List<string> GetMonsterData()
     {
-        battlelMonsterDatas.Add(data);
+        return battlelMonsterDatas;
     }
-   
+
+    
 
    
     public bool isEmptyMonsterData()

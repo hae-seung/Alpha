@@ -1,18 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class CountableItem : Item
 {
-   public CountableItemData CountableData { get; private set; }
+   protected CountableItemData CountableData { get; private set; }
    
-   public int Amount { get; set; }
+   public int Amount { get; protected set; }
    public int MaxAmount => CountableData.MaxAmount;
 
    public bool IsMax => Amount >= CountableData.MaxAmount;
 
    public bool IsEmpty => Amount <= 0;
    
+   public event Action<int> OnUpdateItemCount;
     
     public CountableItem(CountableItemData data, int amount = 1) : base(data)
     {
@@ -32,6 +34,12 @@ public abstract class CountableItem : Item
 
         return (nextAmount > MaxAmount) ? (nextAmount - MaxAmount) : 0;
     }
+
+    public void UpdateItemCount()//아이템이 추가될때 사용
+    {
+        OnUpdateItemCount?.Invoke(Amount);
+    }
+    
     
     public CountableItem Clone(int amount)
     {

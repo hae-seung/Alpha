@@ -6,13 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="380c0b5c-761d-4c1a-a634-83f52016d670" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/LivingEntity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/LivingEntity.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/3DMonster.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/3DMonster/Monster3D.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/3DMonster/Monster3D.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Skill/MonsterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Skill/MonsterData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/Slot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/Slot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Texture/MinimapTexture.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Texture/MinimapTexture.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scenes/PrototypeB_Combat.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scenes/PrototypeB_Combat.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/2. CharacterSetting/CharacterSetting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/2. CharacterSetting/CharacterSetting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/BattleSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/BattleSetup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/2. BattleModerator/BattleModerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/2. BattleModerator/BattleModerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/Data/GameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/Data/GameData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Map.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Map.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainVillage.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainVillage.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +42,31 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/URP.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/e2/e6e5235d/Action`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c65182fde1c949058fff90b2b18f4f75957e00/c7/04473935/Editor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/MonoClass/EquippedItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/ConsumeItem/ConsumeType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/ConsumeItem/PortionItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/MissionItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/WeaponItem/MainWeaponItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemData/ConsumeItemData/AmmoItemData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemData/ConsumeItemData/ScrollItemData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemData/WeaponData/MainWeaponItemData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemObject/ArmorObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemObject/MainWeaponObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemObject/PortionObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/SettingManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/IngameUI/MinimapUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipItemPanel/ArmorAccSlotHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/Lobby/Setting/PanelSetting.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.testtools.codecoverage@1.2.6/Samples~/Tutorial/Asteroids/Scripts/Weapons/WeaponList.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -41,12 +81,13 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;PrototypeB&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;inventory&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CodeLensConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -58,6 +99,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/새 폴더\Alpha.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\USER\Desktop\새 폴더" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\GitHub\Alpha -debugCodeOptimization" />
@@ -114,6 +163,70 @@
       <workItem from="1734322232696" duration="155000" />
       <workItem from="1734322544920" duration="1838000" />
       <workItem from="1734570533390" duration="306000" />
+      <workItem from="1734571452376" duration="12000" />
+      <workItem from="1734571479009" duration="3316000" />
+      <workItem from="1734574881738" duration="5454000" />
+      <workItem from="1734837313087" duration="37000" />
+      <workItem from="1734837454358" duration="3091000" />
+      <workItem from="1734932736127" duration="138000" />
+      <workItem from="1734961152439" duration="4112000" />
+      <workItem from="1734965380577" duration="1586000" />
+      <workItem from="1735045088513" duration="9035000" />
+      <workItem from="1735128224259" duration="16000" />
+      <workItem from="1735128250873" duration="8382000" />
+      <workItem from="1735175355656" duration="59000" />
+      <workItem from="1735175530899" duration="2753000" />
+      <workItem from="1735217283710" duration="3861000" />
+      <workItem from="1735389718568" duration="971000" />
+      <workItem from="1735476103033" duration="23000" />
+      <workItem from="1735552825348" duration="12132000" />
+      <workItem from="1735632407307" duration="5040000" />
+      <workItem from="1735641122730" duration="11937000" />
+      <workItem from="1735653213298" duration="208000" />
+      <workItem from="1735674093341" duration="2617000" />
+      <workItem from="1735676770072" duration="674000" />
+      <workItem from="1735744399159" duration="10682000" />
+      <workItem from="1735907636809" duration="7182000" />
+      <workItem from="1735919963150" duration="553000" />
+      <workItem from="1736081845072" duration="3538000" />
+      <workItem from="1736085426031" duration="1818000" />
+      <workItem from="1736161108400" duration="60000" />
+      <workItem from="1736162247204" duration="5756000" />
+      <workItem from="1736169112686" duration="9000" />
+      <workItem from="1736171299676" duration="291000" />
+      <workItem from="1736171660847" duration="857000" />
+      <workItem from="1736177057891" duration="126000" />
+      <workItem from="1736231292576" duration="3004000" />
+      <workItem from="1736249172699" duration="923000" />
+      <workItem from="1736250146813" duration="6309000" />
+      <workItem from="1736262199809" duration="13000" />
+      <workItem from="1736333148603" duration="5233000" />
+      <workItem from="1736342021793" duration="8151000" />
+      <workItem from="1736601440869" duration="1643000" />
+      <workItem from="1736603182492" duration="1715000" />
+      <workItem from="1736605035932" duration="4586000" />
+      <workItem from="1736612675759" duration="32000" />
+      <workItem from="1736672464726" duration="9716000" />
+      <workItem from="1736693618575" duration="6280000" />
+      <workItem from="1736700833035" duration="639000" />
+      <workItem from="1736701503816" duration="166000" />
+      <workItem from="1736701915283" duration="117000" />
+      <workItem from="1736756531944" duration="4755000" />
+      <workItem from="1736858226960" duration="1221000" />
+      <workItem from="1737033789629" duration="39000" />
+      <workItem from="1737033873818" duration="77000" />
+      <workItem from="1737033966776" duration="5213000" />
+      <workItem from="1737112867167" duration="143000" />
+      <workItem from="1737113052110" duration="245000" />
+      <workItem from="1737113351307" duration="1127000" />
+      <workItem from="1737114791556" duration="2145000" />
+      <workItem from="1737276602206" duration="8250000" />
+      <workItem from="1737294691773" duration="4854000" />
+      <workItem from="1737303163660" duration="4094000" />
+      <workItem from="1737307456722" duration="803000" />
+      <workItem from="1737523023231" duration="20177000" />
+      <workItem from="1737558674271" duration="30000" />
+      <workItem from="1737990469058" duration="312000" />
     </task>
     <servers />
   </component>
@@ -122,7 +235,22 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

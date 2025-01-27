@@ -5,10 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class GameManager : Singleton<GameManager>
+public class GameManager : MonoBehaviour
 {
-    public void EnterBattleScene()
-    {
-        SceneManager.LoadScene("SampleScene");
-    }
+    
 }

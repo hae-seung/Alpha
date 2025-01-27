@@ -8,20 +8,11 @@ public enum ArmorType
 {
     Head,    // 머리
     Chest,   // 상의
-    Legs,    // 하의
+    Pants,    // 하의
     Gloves,  // 장갑
-    Shield,  // 방패
     Boots,   // 신발
-    Cloak,   // 망토
-    Epaulet  // 견장
 }
 
-[System.Serializable]
-public class StatModifier
-{
-    public StatType statType;
-    public int value;
-}
 
 [CreateAssetMenu(fileName = "ArmorItemData", menuName = "SO/ItemData/ArmorItemData")]
 public class ArmorItemData : EquipItemData
@@ -34,4 +25,9 @@ public class ArmorItemData : EquipItemData
 
     [Tooltip("장비 강화 시 증가하는 스텟 값")]
     [SerializeField] private int enhanceIncrement;
+
+    public ArmorType GetArmorType()
+    {
+        return armorType;
+    }
 }
