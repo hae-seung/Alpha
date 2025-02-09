@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SIMPLE : MonoBehaviour
+public class SIMPLE2 : MonoBehaviour
 {
     private string npcName;
 
@@ -16,8 +15,7 @@ public class SIMPLE : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("interact!!");
-            EventsManager.Instance.playerEvent.InteractNpc(npcName);
+            Debug.Log("interact!!!!!!!");
         }
     }
 }
