@@ -34,7 +34,6 @@ public class InventoryUI : MonoBehaviour
     }
     
     
-    
     public void ActiveInventory(bool state)
     {
         gameObject.SetActive(state);

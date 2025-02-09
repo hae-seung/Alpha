@@ -72,12 +72,12 @@ public class FieldManager : MonoBehaviour
 
         // 모든 몬스터 이동 완료 대기
         yield return new WaitUntil(() => completedMonsterMoves == monsters.Count);
-        Debug.Log("모든 몬스터가 이동을 완료했습니다.");
+        //Debug.Log("모든 몬스터가 이동을 완료했습니다.");
     }
     
     private void UpdateBattleMonsterList()
     {
-        Debug.Log("MonsterList 업데이트 호출");
+        //Debug.Log("MonsterList 업데이트 호출");
         foreach (var monster in monsters)
         {
             if (monsterDistancesBeforeMove.ContainsKey(monster) && monster.IsFindTarget && monster.IsLighted)
@@ -87,7 +87,7 @@ public class FieldManager : MonoBehaviour
 
                 if (curDistance < preDistance) // 이전 턴보다 거리가 가까워진 경우
                 {
-                    Debug.Log($"리스트에 {monster.name} 추가!");
+                    //ebug.Log($"리스트에 {monster.name} 추가!");
                     PlayerManager.Instance.SetBattleMonsterData(monster);
                 }
             }
@@ -98,7 +98,7 @@ public class FieldManager : MonoBehaviour
     {
         foreach (var monster in monsters)
         {
-            Debug.Log("몬스터 이동 호출");
+            //Debug.Log("몬스터 이동 호출");
             monster.monsterMovement.Move(() => completedMonsterMoves++);
         }
     }

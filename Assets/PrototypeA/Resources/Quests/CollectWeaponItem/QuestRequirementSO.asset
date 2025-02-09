@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86c68b9fd6c25741a7b341f7dcec6ba, type: 3}
+  m_Name: QuestRequirementSO
+  m_EditorClassIdentifier: 
+  needLevel: 0
+  needItems:
+  - itemData: {fileID: 11400000, guid: eef9237a8b815684bbc7f675237a9cd4, type: 2}
+    preRequiredAmount: 1
+  needNpcLikeability: 0
+  questPrerequisites: []

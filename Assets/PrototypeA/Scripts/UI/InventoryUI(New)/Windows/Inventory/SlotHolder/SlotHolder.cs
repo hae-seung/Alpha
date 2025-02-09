@@ -176,13 +176,13 @@ public class SlotHolder : MonoBehaviour
         {
             int amount = useableItem.Use();
             if (amount <= 0)
-                item.RemoveItemFromInventory(item); //인벤토리 딕셔너리에서 아이템, UI 제거
+                item.RemoveItemFromInventory(item); //인벤토리 딕셔너리에서 아이템, UI 끄기
             else
                 slot.UpdateCountText(amount);//text 수정(감소)
         }
         else if (item is IEquippable equipItem)
         {
-            equipItem.EquipOrSwapItem(item);//딕셔너리 제거 + UI 제거
+            equipItem.EquipOrSwapItem(item);//딕셔너리 제거 + UI 끄기
         }
     }
 }
