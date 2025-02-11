@@ -13,8 +13,8 @@ public class PlayerInventory : MonoBehaviour
     private void OnEnable()
     {
         InitInventory();
-        EventsManager.Instance.itemEvent.onReduceInventoryItem += ReduceInventoryItem;
-        EventsManager.Instance.itemEvent.onRequestItemCheck += RequestItemCheck;
+        EventsManager.instance.itemEvent.onReduceInventoryItem += ReduceInventoryItem;
+        EventsManager.instance.itemEvent.onRequestItemCheck += RequestItemCheck;
     }
     
     private void InitInventory()
@@ -96,7 +96,7 @@ public class PlayerInventory : MonoBehaviour
         }
         
         //인벤토리에는 제한 없이 무한정 들어감.
-        EventsManager.Instance.itemEvent.GetItem(newItem.Data.Id, amount);
+        EventsManager.instance.itemEvent.GetItem(newItem.Data.Id, amount);
     }
     
     private void UpdateItemCount(CountableItem citem)

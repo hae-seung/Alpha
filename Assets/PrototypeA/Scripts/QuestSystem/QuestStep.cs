@@ -21,7 +21,7 @@ public abstract class QuestStep : MonoBehaviour
             isFinished = true;
             
             //퀘스트 상태 승급
-            EventsManager.Instance.questsEvent.AdvanceQuest(questId);
+            EventsManager.instance.questsEvent.AdvanceQuest(questId);
             Destroy(gameObject);
         }
     }

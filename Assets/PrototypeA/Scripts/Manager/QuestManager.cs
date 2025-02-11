@@ -14,16 +14,16 @@ public class QuestManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EventsManager.Instance.questsEvent.onStartQuest += StartQuest;
-        EventsManager.Instance.questsEvent.onAdvanceQuest += AdvanceQuest;
-        EventsManager.Instance.questsEvent.onFinishQuest += FinishQuest;
+        EventsManager.instance.questsEvent.onStartQuest += StartQuest;
+        EventsManager.instance.questsEvent.onAdvanceQuest += AdvanceQuest;
+        EventsManager.instance.questsEvent.onFinishQuest += FinishQuest;
     }
 
     private void Start()
     {
         foreach (Quest quest in questMap.Values)
         {
-            EventsManager.Instance.questsEvent.QuestStateChange(quest);
+            EventsManager.instance.questsEvent.QuestStateChange(quest);
         }
     }
 
@@ -39,7 +39,7 @@ public class QuestManager : MonoBehaviour
             if(quest.state == QuestState.REQUIREMENTS_NOT_MET && CheckRequirementsMet(quest))
             {
                 ChangeQuestState(quest.info.Id, QuestState.CAN_START);
-                Debug.Log($"퀘스트의 상태가 시작가능으로 변경");
+                //Debug.Log($"퀘스트의 상태가 시작가능으로 변경");
             }
         }
     }
@@ -73,7 +73,7 @@ public class QuestManager : MonoBehaviour
     {
         Quest quest = GetQuestById(id);
         quest.state = state;
-        EventsManager.Instance.questsEvent.QuestStateChange(quest);//event호출
+        EventsManager.instance.questsEvent.QuestStateChange(quest);//event호출
     }
 
     private bool CheckRequirementsMet(Quest quest)
@@ -82,13 +82,13 @@ public class QuestManager : MonoBehaviour
         QuestPreRequirementSO questPreRequirement = quest.info.questPreRequirement;
         
         //레벨, 호감도, 아이템, 선행퀘
-        if (EventsManager.Instance.playerEvent.CheckPlayerLevel() < questPreRequirement.needLevel)
+        if (EventsManager.instance.playerEvent.CheckPlayerLevel() < questPreRequirement.needLevel)
         {
             Debug.Log("레벨이 안됨");
             return false;
         }
 
-        if (EventsManager.Instance.playerEvent.CheckNpcLikeability(quest.info.questProviderName) <
+        if (EventsManager.instance.playerEvent.CheckNpcLikeability(quest.info.questProviderName) <
             questPreRequirement.needNpcLikeability)
         {
             Debug.Log("호감도가 안됨");
@@ -125,7 +125,7 @@ public class QuestManager : MonoBehaviour
     {
         for (int i = 0; i < requirement.needItems.Length; i++)
         {
-            if (EventsManager.Instance.itemEvent.ItemCheckRequested(requirement.needItems[i].itemData.Id) <
+            if (EventsManager.instance.itemEvent.ItemCheckRequested(requirement.needItems[i].itemData.Id) <
                 requirement.needItems[i].preRequiredAmount)
                 return false;
         }

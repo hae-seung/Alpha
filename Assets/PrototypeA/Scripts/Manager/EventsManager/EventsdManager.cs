@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventsManager : Singleton<EventsManager>
+public class EventsdManager : Singleton<EventsManager>
 {
     public QuestsEvent questsEvent;
     public PlayerEvent playerEvent;

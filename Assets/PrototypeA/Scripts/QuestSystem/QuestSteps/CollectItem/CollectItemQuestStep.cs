@@ -16,9 +16,9 @@ public class CollectItemQuestStep : QuestStep
     private void OnEnable()
     {
         //아이템을 획득햇을때 호출당함
-        EventsManager.Instance.itemEvent.onGetItem += GetItem;
+        EventsManager.instance.itemEvent.onGetItem += GetItem;
         //플레이어가 갑자기 아이템을 소비해버리면 갯수 감소
-        EventsManager.Instance.itemEvent.onConsumeItem += ConsumeItem;
+        EventsManager.instance.itemEvent.onConsumeItem += ConsumeItem;
     }
     
 
@@ -58,7 +58,7 @@ public class CollectItemQuestStep : QuestStep
         for (int i = 0; i < itemRequirements.Count; i++)
         {
             itemRequirements[i].currentAmount =
-                EventsManager.Instance.itemEvent.ItemCheckRequested(itemRequirements[i].itemData.Id);
+                EventsManager.instance.itemEvent.ItemCheckRequested(itemRequirements[i].itemData.Id);
 
             if (!itemRequirements[i].IsCompleted)
                 hasAllItem = false;

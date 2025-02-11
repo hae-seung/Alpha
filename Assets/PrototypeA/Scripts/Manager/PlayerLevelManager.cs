@@ -19,8 +19,8 @@ public class PlayerLevelManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EventsManager.Instance.playerEvent.onGainedExperience += GainedExperience;
-        EventsManager.Instance.playerEvent.onCheckPlayerLevel += CheckPlayerLevel;
+        EventsManager.instance.playerEvent.onGainedExperience += GainedExperience;
+        EventsManager.instance.playerEvent.onCheckPlayerLevel += CheckPlayerLevel;
     }
 
     private int CheckPlayerLevel()

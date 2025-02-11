@@ -24,7 +24,7 @@ public class PortionItem : CountableItem, IConsumable, IUseable, IBattleUseable
         Amount--;
         
         //todo : 사용이 완료된 경우에만
-        EventsManager.Instance.itemEvent.ConsumeItem(Data.Id, 1);
+        EventsManager.instance.itemEvent.ConsumeItem(Data.Id, 1);
         
         return Amount;
     }

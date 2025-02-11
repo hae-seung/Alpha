@@ -16,9 +16,9 @@ public class DeliveryQuestStep : QuestStep
     
     private void OnEnable()
     {
-        EventsManager.Instance.itemEvent.onGetItem += GetItem;
-        EventsManager.Instance.itemEvent.onConsumeItem += ConsumeItem;
-        EventsManager.Instance.playerEvent.onInteractNpc += InteractNpc;
+        EventsManager.instance.itemEvent.onGetItem += GetItem;
+        EventsManager.instance.itemEvent.onConsumeItem += ConsumeItem;
+        EventsManager.instance.playerEvent.onInteractNpc += InteractNpc;
     }
     
     private void GetItem(int itemId, int amount)
@@ -57,7 +57,7 @@ public class DeliveryQuestStep : QuestStep
         for (int i = 0; i < deliveryItems.Count; i++)
         {
             deliveryItems[i].currentAmount =
-                EventsManager.Instance.itemEvent.ItemCheckRequested(deliveryItems[i].itemData.Id);
+                EventsManager.instance.itemEvent.ItemCheckRequested(deliveryItems[i].itemData.Id);
             
             if (!deliveryItems[i].IsCompleted)
             {
@@ -82,7 +82,7 @@ public class DeliveryQuestStep : QuestStep
         {
             for (int i = 0; i < deliveryItems.Count; i++)
             {
-                EventsManager.Instance.itemEvent.
+                EventsManager.instance.itemEvent.
                     ReduceInventoryItem(deliveryItems[i].itemData.Id, deliveryItems[i].requiredAmount);
             }
             FinishQuestStep();

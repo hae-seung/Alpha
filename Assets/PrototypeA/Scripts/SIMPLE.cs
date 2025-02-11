@@ -17,7 +17,7 @@ public class SIMPLE : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("interact!!");
-            EventsManager.Instance.playerEvent.InteractNpc(npcName);
+            EventsManager.instance.playerEvent.InteractNpc(npcName);
         }
     }
 }

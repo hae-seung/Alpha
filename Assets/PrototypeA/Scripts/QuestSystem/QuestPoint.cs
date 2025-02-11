@@ -30,8 +30,8 @@ public class QuestPoint : MonoBehaviour
 
     private void OnEnable()
     {
-        EventsManager.Instance.questsEvent.onQuestStateChange += QuestStateChange;
-        EventsManager.Instance.playerEvent.onCheckNpcLikeability += CheckNpcLikeability;
+        EventsManager.instance.questsEvent.onQuestStateChange += QuestStateChange;
+        EventsManager.instance.playerEvent.onCheckNpcLikeability += CheckNpcLikeability;
     }
 
     private int CheckNpcLikeability(string questProviderName)
@@ -66,20 +66,20 @@ public class QuestPoint : MonoBehaviour
     {
         Debug.Log("interact!");
         
-        EventsManager.Instance.playerEvent.InteractNpc(npcName);
+        EventsManager.instance.playerEvent.InteractNpc(npcName);
         
         
         ///바뀐 퀘스트 상태에 대해서
         if (currentQuestState.Equals(QuestState.CAN_START) && startPoint)
         {
             //퀘스트 시작
-            EventsManager.Instance.questsEvent.StartQuest(questId);
+            EventsManager.instance.questsEvent.StartQuest(questId);
         }
         else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
         {
             Debug.Log("퀘스트 완료!");
             //퀘스트 종료
-            EventsManager.Instance.questsEvent.FinishQuest(questId);
+            EventsManager.instance.questsEvent.FinishQuest(questId);
         }
     }
 }
