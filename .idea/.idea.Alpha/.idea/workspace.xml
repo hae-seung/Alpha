@@ -6,32 +6,261 @@
   <component name="ChangeListManager">
     <list default="true" id="380c0b5c-761d-4c1a-a634-83f52016d670" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alpha/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/Slot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Prefab/Slot/Slot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Texture/MinimapTexture.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Texture/MinimapTexture.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scenes/PrototypeB_Combat.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scenes/PrototypeB_Combat.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/2. CharacterSetting/CharacterSetting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/2. CharacterSetting/CharacterSetting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/BattleSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/1. BattleSetup/BattleSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/2. BattleModerator/BattleModerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/BattleManger/2. BattleModerator/BattleModerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/Data/GameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeB/Scripts/Data/GameData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Map.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Map.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FieldScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainVillage.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainVillage.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pretendard-Black SDF.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Font.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Font/public.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Font/public/static.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Font/public/static/Pretendard-Black.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Font/public/static/Pretendard-Black.otf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Lobby.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Minimap.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Minimap/MinimapMask01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/Minimap/MinimapMask01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/TilesTownSprite.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/TilesTownSprite/tile_0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/TilesTownSprite/tile_0000.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/TilesTownSprite/tile_0025.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/TilesTownSprite/tile_0025.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/TilesTownSprite/tile_0083.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/TilesTownSprite/tile_0083.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/TilesTownSprite/tile_0130.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/TilesTownSprite/tile_0130.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/TilesTownSprite/tile_0131.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/TilesTownSprite/tile_0131.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/tile_0000.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/tile_0000.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/tile_0025.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/TileMap/tile_0025.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/00_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/00_background.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/01_charactor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/01_charactor.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/02_fade.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/02_fade.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/03_info.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/03_info.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/04_list bar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/04_list bar.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/04_list.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/04_list.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/05_slash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/05_slash.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/05_도구.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/05_도구.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/06_방어구_장신구.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/06_방어구_장신구.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/07_text.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/07_text.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/귀고리 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/귀고리 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/귀고리.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/귀고리.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/귀고리ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/귀고리ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/기본 텍스트.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/기본 텍스트.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/도검류.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/도검류.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/도검류ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/도검류ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/도구.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/도구.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/도구ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/도구ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/둔기류.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/둔기류.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/둔기류ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/둔기류ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/마법.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/마법.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/마법ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/마법ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/맵.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/맵.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/맵ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/맵ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/모자 (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/모자 (2).png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/모자 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/모자 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/모자-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/모자-1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/모자.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/모자.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/모자ㅅ (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/모자ㅅ (2).png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/모자ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/모자ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/목걸이 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/목걸이 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/목걸이.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/목걸이.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/목걸이ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/목걸이ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/물약.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/물약.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/물약ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/물약ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/바지 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/바지 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/바지.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/바지.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/바지ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/바지ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/반지 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/반지 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/반지.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/반지.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/반지ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/반지ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/방어구 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/방어구 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/방어구.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/방어구.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/방어구ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/방어구ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/방패.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/방패.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/방패ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/방패ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/부산물.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/부산물.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/부산물ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/부산물ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/빈 슬롯.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/빈 슬롯.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/상의 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/상의 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/상의.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/상의.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/상의ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/상의ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/선택된 슬롯.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/선택된 슬롯.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/소모품 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/소모품 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/소모품.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/소모품.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/소모품ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/소모품ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/스크롤.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/스크롤.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/스크롤ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/스크롤ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/스킬.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/스킬.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/스킬ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/스킬ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/신발 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/신발 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/신발.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/신발.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/신발ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/신발ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/인벤.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/인벤.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/인벤토리.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/인벤토리.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/인벤토리ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/인벤토리ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/임무.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/임무.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/임무ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/임무ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장갑 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장갑 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장갑.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장갑.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장갑ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장갑ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장비 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장비 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장비.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장비.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장비ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장비ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장신구 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장신구 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장신구, 방어구, 도구 등 사용 중 슬롯.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장신구, 방어구, 도구 등 사용 중 슬롯.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장신구.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장신구.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장신구ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/장신구ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/전체.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/전체.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/전체ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/전체ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/제작.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/제작.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/제작ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/제작ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/캐릭터.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/캐릭터.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/캐릭터ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/캐릭터ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/퀘스트.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/퀘스트.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/퀘스트ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/퀘스트ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/탄약.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/탄약.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/탄약ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/탄약ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/팔찌 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/팔찌 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/팔찌.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/팔찌.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/팔찌ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/팔찌ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/폭탄.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/폭탄.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/폭탄ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/폭탄ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/활.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/활.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/활ㅅ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/slotui/활ㅅ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/HP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/HP.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/Weapon UI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/Weapon UI.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/break.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/break.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/camp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/camp.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/mana.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/mana.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/map_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/map_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/map_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/map_02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/map_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/map_03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/map_04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/map_04.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/player icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/player icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/quest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/quest.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/time.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/warp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Resource/UI/texture/warp.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scenes/FieldScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scenes/FieldScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/2DMonster/MonsterMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Monster/2DMonster/MonsterMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/PlayerInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/PlayerInventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Status/Status.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Status/Status.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/ConsumeItem/PortionItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/ConsumeItem/PortionItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/FieldManger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/FieldManger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/base/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/base/Singleton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/SIMPLE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/SIMPLE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/InventoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/InventoryUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/SlotHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/SlotHolder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +275,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c65182fde1c949058fff90b2b18f4f75957e00/c7/04473935/Editor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Player/MonoClass/EquippedItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Entity/Status/StatType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/ConsumeItem/ConsumeType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/ConsumeItem/PortionItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/Item/MissionItem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -56,7 +286,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemObject/ArmorObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemObject/MainWeaponObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Item/ItemObject/PortionObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/EventsManager/PlayerEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/EventsManager/QuestsEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/PlayerLevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/Manager/SettingManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/QuestSystem/QuestPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/QuestSystem/QuestRewardSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/QuestSystem/QuestSteps/CollectItem/CollectItemQuestStep.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/QuestSystem/QuestSteps/DeliveryItem/DeliveryQuestStep.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/SIMPLE2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/IngameUI/MinimapUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/InventoryUI(New)/Windows/Inventory/SlotHolder/EquipItemPanel/ArmorAccSlotHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PrototypeA/Scripts/UI/Lobby/Setting/PanelSetting.cs" root0="FORCE_HIGHLIGHTING" />
@@ -81,7 +319,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;inventory&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ShopUI&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -227,6 +465,26 @@
       <workItem from="1737523023231" duration="20177000" />
       <workItem from="1737558674271" duration="30000" />
       <workItem from="1737990469058" duration="312000" />
+      <workItem from="1738069300396" duration="1406000" />
+      <workItem from="1738580572390" duration="3771000" />
+      <workItem from="1738591550585" duration="2537000" />
+      <workItem from="1738595852962" duration="632000" />
+      <workItem from="1738601800296" duration="1466000" />
+      <workItem from="1738603887607" duration="1245000" />
+      <workItem from="1738651350363" duration="807000" />
+      <workItem from="1738655846582" duration="39000" />
+      <workItem from="1738655921305" duration="160000" />
+      <workItem from="1738660878189" duration="559000" />
+      <workItem from="1738661482779" duration="5122000" />
+      <workItem from="1738673882302" duration="3691000" />
+      <workItem from="1738757962168" duration="7626000" />
+      <workItem from="1738778339604" duration="183000" />
+      <workItem from="1738823357512" duration="14469000" />
+      <workItem from="1738852427008" duration="7771000" />
+      <workItem from="1738916831081" duration="3187000" />
+      <workItem from="1738931561055" duration="644000" />
+      <workItem from="1738941519825" duration="1467000" />
+      <workItem from="1738945650320" duration="97000" />
     </task>
     <servers />
   </component>

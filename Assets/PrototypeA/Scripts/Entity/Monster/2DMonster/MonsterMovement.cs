@@ -30,7 +30,7 @@ public class MonsterMovement : MonoBehaviour
 
     public void Move(Action onComplete)
     {
-        Debug.Log("무브호출!");
+        //Debug.Log("무브호출!");
         if (monsterCongnize.IsFindTarget) // 플레이어를 찾은 상황이라면 플레이어쪽으로 이동
         {
             CalculateNextPosition();
@@ -67,14 +67,14 @@ public class MonsterMovement : MonoBehaviour
         {
             targetPosition += new Vector3(primaryDirection.x * tileUnitSize, primaryDirection.y * tileUnitSize, 0);
             lastDirection = primaryDirection; // 이동한 방향을 기록
-            Debug.Log($"주축 방향으로 이동: {primaryDirection}");
+            //Debug.Log($"주축 방향으로 이동: {primaryDirection}");
         }
         // 부축 방향으로 레이캐스트를 쏴서 이동 가능한지 확인
         else if (CanMoveToDirection(monsterPosition, secondaryDirection))
         {
             targetPosition += new Vector3(secondaryDirection.x * tileUnitSize, secondaryDirection.y * tileUnitSize, 0);
             lastDirection = secondaryDirection; // 이동한 방향을 기록
-            Debug.Log($"부축 방향으로 이동: {secondaryDirection}");
+            //Debug.Log($"부축 방향으로 이동: {secondaryDirection}");
         }
         // 주축, 부축 모두 불가능할 경우, 남은 방향으로 시도
         else
@@ -94,11 +94,11 @@ public class MonsterMovement : MonoBehaviour
 
         if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Road"))
         {
-            Debug.Log($"이동 가능: {direction}, 타일: {hit.collider.name}, 레이어: {LayerMask.LayerToName(hit.collider.gameObject.layer)}");
+           // Debug.Log($"이동 가능: {direction}, 타일: {hit.collider.name}, 레이어: {LayerMask.LayerToName(hit.collider.gameObject.layer)}");
             return true;
         }
 
-        Debug.LogWarning($"이동 불가: {direction}, 위치: {nextTilePosition}");
+        //Debug.LogWarning($"이동 불가: {direction}, 위치: {nextTilePosition}");
         return false;
     }
 
@@ -118,7 +118,7 @@ public class MonsterMovement : MonoBehaviour
             }
         }
 
-        Debug.LogWarning("모든 방향이 막혀 이동 불가.");
+        //Debug.LogWarning("모든 방향이 막혀 이동 불가.");
         return currentPosition; // 이동하지 않음
     }
 
@@ -176,7 +176,7 @@ public class MonsterMovement : MonoBehaviour
         // 방향으로 이동
         targetPosition += new Vector3(chosenDirection.x * tileUnitSize, chosenDirection.y * tileUnitSize, 0);
         lastDirection = chosenDirection;  // 현재 방향을 기록
-        Debug.Log($"랜덤 방향으로 이동: {chosenDirection}");
+        //Debug.Log($"랜덤 방향으로 이동: {chosenDirection}");
     }
     else
     {
@@ -184,7 +184,7 @@ public class MonsterMovement : MonoBehaviour
         targetPosition = transform.position + new Vector3(-lastDirection.x * tileUnitSize, -lastDirection.y * tileUnitSize, 0);
         lastDirection = -lastDirection;  // 반대 방향으로 업데이트
         monsterTurn = 0;
-        Debug.Log($"길이 막혀서 이전 방향으로 돌아갑니다: {lastDirection}");
+        //Debug.Log($"길이 막혀서 이전 방향으로 돌아갑니다: {lastDirection}");
     }
 }
 

@@ -10,11 +10,13 @@ public class PlayerInventory : MonoBehaviour
     private Dictionary<int, List<Item>> items;
     private EquippedItem equippedItem;
     
-    private void Start()
+    private void OnEnable()
     {
         InitInventory();
+        EventsManager.instance.itemEvent.onReduceInventoryItem += ReduceInventoryItem;
+        EventsManager.instance.itemEvent.onRequestItemCheck += RequestItemCheck;
     }
-
+    
     private void InitInventory()
     {
         if (PlayerManager.Instance.inventory == null)
@@ -92,6 +94,9 @@ public class PlayerInventory : MonoBehaviour
             items[itemId].Add(newItem);
             CreateNewArmorItem(newItem, items.Count - 1);
         }
+        
+        //인벤토리에는 제한 없이 무한정 들어감.
+        EventsManager.instance.itemEvent.GetItem(newItem.Data.Id, amount);
     }
     
     private void UpdateItemCount(CountableItem citem)
@@ -111,7 +116,7 @@ public class PlayerInventory : MonoBehaviour
         inventoryUI.CreateNewItem(newItem,stackIdx);
     }
 
-    private void RemoveItem(Item item)
+    private void RemoveItem(Item item)//인벤토리 내에서 호출
     {
         item.OnInventoryItemRemove -= RemoveItem;//리스트에서 제거될때 구독해지
         if (items.TryGetValue(item.Data.Id, out List<Item> itemList))
@@ -120,7 +125,59 @@ public class PlayerInventory : MonoBehaviour
             inventoryUI.RemoveItemAllTabs(item);
         }
     }
+    
+    private void ReduceInventoryItem(int itemId, int removeAmount)//외부에서 호출
+    {
+        if (!items.ContainsKey(itemId))
+            return;
 
+        Item item = items[itemId][0];
+        
+        if (item is CountableItem countableItem)
+        {
+            CountableItem citem = null;
+            for (int i = 0; i < items[itemId].Count; i++)
+            {
+                citem = items[itemId][i] as CountableItem;
+                if (citem.Amount > removeAmount)
+                {
+                    UpdateItemCount(citem);
+                    return;
+                }
+                else
+                {
+                    removeAmount -= citem.Amount;
+                    RemoveItem(citem);
+                    i--;
+                }
+            }
+        }
+        else
+        {
+            RemoveItem(item);
+        }
+        
+    }
+
+    private int RequestItemCheck(int itemId)
+    {
+        int totalAmount = 0;
+        if (items.TryGetValue(itemId, out List<Item> value))
+        {
+            for(int i = 0; i<value.Count; i++)
+            {
+                if (value[i] is CountableItem citem)
+                    totalAmount += citem.Amount;
+                else
+                    totalAmount += 1;
+            }
+
+            return totalAmount;
+        }
+        
+        return 0;
+    }
+    
     private void EquipOrSwapItem(Item item)
     {
         // 1. 이벤트 해제 및 인벤토리에서 제거
@@ -257,7 +314,7 @@ public class PlayerInventory : MonoBehaviour
         AddItem(item);
     }
 
-
+    
    
     public void GetInventoryFromManager()
     {

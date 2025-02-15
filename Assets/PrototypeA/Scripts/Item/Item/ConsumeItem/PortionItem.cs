@@ -23,7 +23,8 @@ public class PortionItem : CountableItem, IConsumable, IUseable, IBattleUseable
         
         Amount--;
         
-        //todo:회복 로직 필요
+        //todo : 사용이 완료된 경우에만
+        EventsManager.instance.itemEvent.ConsumeItem(Data.Id, 1);
         
         return Amount;
     }

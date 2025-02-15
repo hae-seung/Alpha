@@ -2,19 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum StatType
-{
-    MaxHp,
-    Hp,
-    MaxMana,
-    Mana,
-    Str,
-    Dex,
-    Intelligence,
-    ThoughtPower,
-    Defense
-}
-
 public class Status
 {
     private Dictionary<StatType, int> stats = new Dictionary<StatType, int>();
@@ -31,14 +18,7 @@ public class Status
         stats[StatType.ThoughtPower] = data.ThoughtPower;
         stats[StatType.Defense] = data.Defense;
     }
-
-    public Status(Status status) // 복사 생성자
-    {
-        foreach (var stat in status.stats)
-        {
-            stats[stat.Key] = stat.Value;
-        }
-    }
+    
 
     // 특정 스탯 값을 가져오기
     public int GetStat(StatType statType)
